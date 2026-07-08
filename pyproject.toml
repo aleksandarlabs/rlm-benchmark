@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "rlm-context-benchmark"
+name = "rlm-benchmark"
 version = "0.1.0"
 description = "Reusable harness to compare vanilla, terminal-agent, and RLM retrieval over codebases that exceed model context windows."
 readme = "README.md"
@@ -39,9 +39,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/aleksandar-labs/rlm-context-benchmark"
-Repository = "https://github.com/aleksandar-labs/rlm-context-benchmark"
-Issues = "https://github.com/aleksandar-labs/rlm-context-benchmark/issues"
+Homepage = "https://github.com/aleksandarlabs/rlm-benchmark"
+Repository = "https://github.com/aleksandarlabs/rlm-benchmark"
+Issues = "https://github.com/aleksandarlabs/rlm-benchmark/issues"
 
 [tool.ruff]
 line-length = 100

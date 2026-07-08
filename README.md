@@ -1,4 +1,6 @@
-# RLM Context Benchmark
+# RLM Benchmark
+
+[![Repo](https://img.shields.io/badge/repo-aleksandarlabs%2Frlm--benchmark-blue)](https://github.com/aleksandarlabs/rlm-benchmark)
 
 A reusable harness to compare three ways of giving a language model access to a codebase that exceeds its context window:
 
@@ -149,6 +151,8 @@ Conditions (Experiment 1):
 The article used `repomix` (~1.13M tokens, 1037 files). To reproduce:
 
 ```bash
+git clone https://github.com/aleksandarlabs/rlm-benchmark.git
+cd rlm-benchmark
 git clone https://github.com/yamadashy/repomix.git corpus
 cp examples/questions-repomix-exp1.json questions/questions.json
 cp examples/questions-repomix-exp2.json questions/questions-complexity.json
