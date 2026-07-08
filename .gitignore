@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+*.so
+*.dylib
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Benchmark caches and outputs
+.cache/
+/results/*
+!/results/.gitkeep
+/corpus/*
+!/corpus/.gitkeep
+/questions/*.json
+!/questions/.gitkeep
+!/questions/example-*.json
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log

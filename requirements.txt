@@ -1,0 +1,14 @@
+# Recursive Language Model library (verify package name on PyPI for your install).
+rlm>=0.1.0
+
+# OpenAI-compatible client (Groq / OpenRouter).
+openai>=1.0
+
+# Load secrets from .env.
+python-dotenv>=1.0
+
+# Direct HTTP calls.
+requests>=2.28
+
+# YAML config support.
+pyyaml>=6.0

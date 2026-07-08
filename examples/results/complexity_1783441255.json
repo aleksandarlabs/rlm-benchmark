@@ -1,0 +1,459 @@
+{
+  "timestamp": "2026-07-07T17:59:15.584172",
+  "model": "moonshotai/kimi-k2.6",
+  "tasks": [
+    {
+      "id": "C1",
+      "tier": "constant",
+      "arms": {
+        "vanilla": {
+          "text": "**100**\n\nDefinido en `src/config/configSchema.ts`, dentro del schema por defecto (`repomixConfigDefaultSchema`):\n\n```typescript\nsortByChangesMaxCommits: v.optional(v.pipe(v.number(), v.integer(), v.minValue(1)), 100),\n```",
+          "cost_usd": 0.178572,
+          "elapsed_s": 13.8,
+          "failed": false,
+          "turns": null,
+          "tool_calls": null,
+          "score": {
+            "f1": 1.0,
+            "correct": true
+          },
+          "f1": 1.0,
+          "response": "**100**\n\nDefinido en `src/config/configSchema.ts`, dentro del schema por defecto (`repomixConfigDefaultSchema`):\n\n```typescript\nsortByChangesMaxCommits: v.optional(v.pipe(v.number(), v.integer(), v.minValue(1)), 100),\n```"
+        },
+        "pi": {
+          "text": "El valor por defecto de `output.git.sortByChangesMaxCommits` es **100**.\n\nSe define en:\n\n**`src/config/configSchema.ts:128`**\n```ts\nsortByChangesMaxCommits: v.optional(v.pipe(v.number(), v.integer(), v.minValue(1)), 100),\n```\n\nEl `100` al final del `v.optional(...)` es el valor por defecto. Esto se confirma también en los tests, por ejemplo en `tests/config/configLoad.test.ts:353`:\n```ts\nexpect(merged.output.git.sortByChangesMaxCommits).toBe(100);\n```",
+          "cost_usd": 0.004309,
+          "elapsed_s": 31.8,
+          "failed": false,
+          "turns": 4,
+          "tool_calls": 3,
+          "score": {
+            "f1": 1.0,
+            "correct": true
+          },
+          "f1": 1.0,
+          "response": "El valor por defecto de `output.git.sortByChangesMaxCommits` es **100**.\n\nSe define en:\n\n**`src/config/configSchema.ts:128`**\n```ts\nsortByChangesMaxCommits: v.optional(v.pipe(v.number(), v.integer(), v.minValue(1)), 100),\n```\n\nEl `100` al final del `v.optional(...)` es el valor por defecto. Esto se confirma también en los tests, por ejemplo en `tests/config/configLoad.test.ts:353`:\n```ts\nexpect(merged.output.git.sortByChangesMaxCommits).toBe(100);\n```"
+        },
+        "rlm": {
+          "text": "El valor por defecto de output.git.sortByChangesMaxCommits en el schema de configuración es 100. Se define en src/config/configSchema.ts dentro de repomixConfigDefaultSchema: `sortByChangesMaxCommits: v.optional(v.pipe(v.number(), v.integer(), v.minValue(1)), 100)`",
+          "cost_usd": 0.042206049999999995,
+          "elapsed_s": 49.5,
+          "failed": false,
+          "turns": null,
+          "tool_calls": null,
+          "score": {
+            "f1": 1.0,
+            "correct": true
+          },
+          "f1": 1.0,
+          "response": "El valor por defecto de output.git.sortByChangesMaxCommits en el schema de configuración es 100. Se define en src/config/configSchema.ts dentro de repomixConfigDefaultSchema: `sortByChangesMaxCommits: v.optional(v.pipe(v.number(), v.integer(), v.minValue(1)), 100)`"
+        }
+      }
+    },
+    {
+      "id": "C2",
+      "tier": "constant",
+      "arms": {
+        "vanilla": {
+          "text": "Repomix usa **gpt-tokenizer** para contar tokens.\n\n- **`package.json`**: `\"gpt-tokenizer\": \"^3.4.0\"` (dependencia principal).\n- **`src/core/metrics/TokenCounter.ts`**: importa `GptEncoding` y `resolveEncodingAsync` desde `gpt-tokenizer`.\n- **`src/config/configSchema.ts`**: importa `TOKEN_ENCODINGS` desde el módulo de metricas basado en `gpt-tokenizer`.\n\nSoporta múltiples codificaciones como `o200k_base` (GPT-4o) y `cl100k_base` (GPT-4/3.5), definidas en `src/core/metrics/tokenEncodings.js`.",
+          "cost_usd": 0.17836019999999997,
+          "elapsed_s": 12.2,
+          "failed": false,
+          "turns": null,
+          "tool_calls": null,
+          "score": {
+            "f1": 1.0,
+            "correct": true
+          },
+          "f1": 1.0,
+          "response": "Repomix usa **gpt-tokenizer** para contar tokens.\n\n- **`package.json`**: `\"gpt-tokenizer\": \"^3.4.0\"` (dependencia principal).\n- **`src/core/metrics/TokenCounter.ts`**: importa `GptEncoding` y `resolveEncodingAsync` desde `gpt-tokenizer`.\n- **`src/config/configSchema.ts`**: importa `TOKEN_ENCODINGS` desde el módulo de metricas basado en `gpt-tokenizer`.\n\nSoporta múltiples codificaciones como `o200k_base` (GPT-4o) y `cl100k_base` (GPT-4/3.5), definidas en `src/core/metrics/tokenEncodings.js`."
+        },
+        "pi": {
+          "text": "**Repomix** usa la librería **`gpt-tokenizer`** (`^3.4.0`) para contar tokens.\n\nSe puede ver en el `package.json`:\n\n```json\n\"gpt-tokenizer\": \"^3.4.0\"\n```\n\nY en el archivo `src/core/metrics/TokenCounter.ts`, que importa directamente de `gpt-tokenizer`:\n\n```typescript\nimport { GptEncoding } from 'gpt-tokenizer/GptEncoding';\nimport { resolveEncodingAsync } from 'gpt-tokenizer/resolveEncodingAsync';\n```\n\nLa librería se utiliza para crear codificaciones tipo BPE (como `cl100k_base`, `o200k_base`, etc.) y contar los tokens de cada archivo procesado, tratando todo el contenido como texto plano.",
+          "cost_usd": 0.004708,
+          "elapsed_s": 14.8,
+          "failed": false,
+          "turns": 3,
+          "tool_calls": 3,
+          "score": {
+            "f1": 1.0,
+            "correct": true
+          },
+          "f1": 1.0,
+          "response": "**Repomix** usa la librería **`gpt-tokenizer`** (`^3.4.0`) para contar tokens.\n\nSe puede ver en el `package.json`:\n\n```json\n\"gpt-tokenizer\": \"^3.4.0\"\n```\n\nY en el archivo `src/core/metrics/TokenCounter.ts`, que importa directamente de `gpt-tokenizer`:\n\n```typescript\nimport { GptEncoding } from 'gpt-tokenizer/GptEncoding';\nimport { resolveEncodingAsync } from 'gpt-tokenizer/resolveEncodingAsync';\n```\n\nLa librería se utiliza para crear codificaciones tipo BPE (como `cl100k_base`, `o200k_base`, etc.) y contar los tokens de cada archivo procesado, tratando todo el contenido como texto plano."
+        },
+        "rlm": {
+          "text": "repomix usa la librería **gpt-tokenizer** para contar tokens. Esto se puede ver en:\n\n1. **package.json**: incluye `gpt-tokenizer` como dependencia.\n2. **src/core/metrics/TokenCounter.ts**: importa `GptEncoding` y `resolveEncodingAsync` desde `gpt-tokenizer`, y utiliza `GptEncoding.getEncodingApi()` junto con `resolveEncodingAsync()` para cargar dinámicamente los rankings BPE y crear instancias de codificación que luego usan `countTokens()`.",
+          "cost_usd": 0.026297,
+          "elapsed_s": 37.4,
+          "failed": false,
+          "turns": null,
+          "tool_calls": null,
+          "score": {
+            "f1": 1.0,
+            "correct": true
+          },
+          "f1": 1.0,
+          "response": "repomix usa la librería **gpt-tokenizer** para contar tokens. Esto se puede ver en:\n\n1. **package.json**: incluye `gpt-tokenizer` como dependencia.\n2. **src/core/metrics/TokenCounter.ts**: importa `GptEncoding` y `resolveEncodingAsync` desde `gpt-tokenizer`, y utiliza `GptEncoding.getEncodingApi()` junto con `resolveEncodingAsync()` para cargar dinámicamente los rankings BPE y crear instancias de codificación que luego usan `countTokens()`."
+        }
+      }
+    },
+    {
+      "id": "L1",
+      "tier": "linear",
+      "arms": {
+        "vanilla": {
+          "text": "Todos los flags largos (`--xxx`) del CLI se definen en **`src/cli/cliRun.ts`** mediante Commander.js. Aquí está la lista completa:\n\n**Básicos**\n- `--version`\n- `--verbose`\n- `--quiet`\n- `--stdout`\n- `--stdin`\n- `--copy`\n- `--token-count-tree`\n- `--top-files-len`\n\n**Salida**\n- `--output`\n- `--style`\n- `--output-file-path-style`\n- `--parsable-style`\n- `--compress`\n- `--output-show-line-numbers`\n- `--no-file-summary`\n- `--no-directory-structure`\n- `--no-files`\n- `--remove-comments`\n- `--remove-empty-lines`\n- `--truncate-base64`\n- `--header-text`\n- `--instruction-file-path`\n- `--split-output`\n- `--include-empty-directories`\n- `--include-full-directory-structure`\n- `--no-git-sort-by-changes`\n- `--include-diffs`\n- `--include-logs`\n- `--include-logs-count`\n\n**Selección de archivos**\n- `--include`\n- `--ignore`\n- `--no-gitignore`\n- `--no-dot-ignore`\n- `--no-default-patterns`\n\n**Remoto**\n- `--remote`\n- `--remote-branch`\n- `--remote-trust-config`\n\n**Configuración**\n- `--config`\n- `--init`\n- `--global`\n\n**Seguridad y tokens**\n- `--no-security-check`\n- `--token-count-encoding`\n- `--token-budget`\n\n**MCP y Skills**\n- `--mcp`\n- `--skill-generate`\n- `--skill-project-name`\n- `--skill-output`\n- `--force`\n\n**Watch**\n- `--watch`",
+          "cost_usd": 0.1833215,
+          "elapsed_s": 40.1,
+          "failed": false,
+          "turns": null,
+          "tool_calls": null,
+          "score": {
+            "f1": 0.97,
+            "precision": 0.96,
+            "recall": 0.98,
+            "tp": 48,
+            "pred_n": 50,
+            "ref_n": 49,
+            "missing": [
+              "--truncate-base"
+            ],
+            "extra": [
+              "--truncate-base64",
+              "--xxx"
+            ]
+          },
+          "f1": 0.97,
+          "response": "Todos los flags largos (`--xxx`) del CLI se definen en **`src/cli/cliRun.ts`** mediante Commander.js. Aquí está la lista completa:\n\n**Básicos**\n- `--version`\n- `--verbose`\n- `--quiet`\n- `--stdout`\n- `--stdin`\n- `--copy`\n- `--token-count-tree`\n- `--top-files-len`\n\n**Salida**\n- `--output`\n- `--style`\n- `--output-file-path-style`\n- `--parsable-style`\n- `--compress`\n- `--output-show-line-numbers`\n- `--no-file-summary`\n- `--no-directory-structure`\n- `--no-files`\n- `--remove-comments`\n- `--remove-empty-lines`\n- `--truncate-base64`\n- `--header-text`\n- `--instruction-file-path`\n- `--split-output`\n- `--include-empty-directories`\n- `--include-full-directory-structure`\n- `--no-git-sort-by-changes`\n- `--include-diffs`\n- `--include-logs`\n- `--include-logs-count`\n\n**Selección de archivos**\n- `--include`\n- `--ignore`\n- `--no-gitignore`\n- `--no-dot-ignore`\n- `--no-default-patterns`\n\n**Remoto**\n- `--remote`\n- `--remote-branch`\n- `--remote-trust-config`\n\n**Configuración**\n- `--config`\n- `--init`\n- `--global`\n\n**Seguridad y tokens**\n- `--no-security-check`\n- `--token-count-encoding`\n- `--token-budget`\n\n**MCP y Skills**\n- `--mcp`\n- `--skill-generate`\n- `--skill-project-name`\n- `--skill-output`\n- `--fo"
+        },
+        "pi": {
+          "text": "Aquí están **todos los flags** (`--xxx`) que define el CLI de repomix, según su definición en `src/cli/cliRun.ts`:\n\n### Opciones Básicas\n1. `--version` (`-v`) — Muestra la versión y sale.\n\n### Opciones de Entrada/Salida\n2. `--verbose` — Activa logs de debug detallados (contradice `--quiet`).\n3. `--quiet` — Suprime toda salida excepto errores (contradice `--verbose`).\n4. `--stdout` — Escribe el resultado directamente a stdout en lugar de un archivo (contradice `--output`).\n5. `--stdin` — Lee rutas de archivo desde stdin, una por línea.\n6. `--copy` — Copia el resultado generado al portapapeles.\n7. `--token-count-tree [threshold]` — Muestra el árbol de archivos con conteo de tokens; umbral opcional.\n8. `--top-files-len <number>` — Número de archivos más grandes a mostrar en el resumen (por defecto: 5).\n\n### Opciones de Salida de Repomix\n9. `--output <file>` (`-o`) — Ruta del archivo de salida (por defecto: `repomix-output.xml`; usa `-` para stdout).\n10. `--style <type>` — Formato de salida: `xml`, `markdown`, `json`, o `plain`.\n11. `--output-file-path-style <style>` — Estilo de rutas en la salida: `target-relative` o `cwd-relative`.\n12. `--parsable-style` — Escapa caracteres especiales para asegurar XML/Markdown válido.\n13. `--compress` — Extrae estructura esencial del código (clases, funciones, interfaces) vía Tree-sitter.\n14. `--output-show-line-numbers` — Prefija cada línea con su número de línea.\n15. `--no-file-summary` — Omite la sección de resumen de archivos.\n16. `--no-directory-structure` — Omite la visualización del árbol de directorios.\n17. `--no-files` — Genera solo metadatos sin contenido de archivos.\n18. `--remove-comments` — Elimina todos los comentarios del código.\n19. `--remove-empty-lines` — Elimina líneas en blanco de todos los archivos.\n20. `--truncate-base64` — Trunca cadenas base64 largas.\n21. `--header-text <text>` — Texto personalizado al inicio de la salida.\n22. `--instruction-file-path <path>` — Ruta a archivo con instrucciones personalizadas.\n23. `--output-show-line-numbers` — Prefija cada línea con su número de línea.\n24. `--no-file-summary` — Omite la sección de resumen de archivos.\n25. `--no-directory-structure` — Omite la visualización del árbol de directorios.\n26. `--no-files` — Genera solo metadatos sin contenido de archivos.\n27. `--remove-comments` — Elimina todos los comentarios del código.\n28. `--remove-empty-lines` — Elimina líneas en blanco de todos los archivos.\n29. `--truncate-base64` — Trunca cadenas base64 largas.\n30. `--header-text <text>` — Texto personalizado al inicio de la salida.\n31. `--instruction-file-path <path>` — Ruta a archivo con instrucciones personalizadas.\n32. `--split-output <size>` — Divide la salida en múltiples archivos numerados (ej. `500kb`, `2mb`).\n33. `--include-empty-directories` — Incluye carpetas vacías en la estructura de directorios.\n34. `--include-full-directory-structure` — Muestra el árbol completo aunque se usen patrones `--include`.\n35. `--no-git-sort-by-changes` — No ordena archivos por frecuencia de cambios git.\n36. `--include-diffs` — Agrega sección con git diff (working tree y staged).\n37. `--include-logs` — Agrega historial de commits de git.\n38. `--include-logs-count <count>` — Número de commits recientes a incluir (por defecto: 50).\n\n### Opciones de Selección de Archivos\n39. `--include <patterns>` — Incluye solo archivos que coincidan con patrones glob (separados por coma).\n40. `--ignore <patterns>` (`-i`) — Patrones adicionales para excluir.\n41. `--no-gitignore` — No usa reglas de `.gitignore`.\n42. `--no-dot-ignore` — No usa reglas de `.ignore`.\n43. `--no-default-patterns` — No aplica patrones de ignorar built-in.\n\n### Opciones de Repositorio Remoto\n44. `--remote <url>` — Clona y empaqueta un repositorio remoto (URL de GitHub o formato `user/repo`).\n45. `--remote-branch <name>` — Rama, tag o commit específico.\n46. `--remote-trust-config` — Confía y carga configs del repositorio remoto.\n\n### Opciones de Configuración\n47. `--config <path>` (`-c`) — Usa archivo de configuración personalizado.\n48. `--init` — Crea un nuevo `repomix.config.json` con valores por defecto.\n49. `--global` — Con `--init`, crea la config en el home del usuario.\n\n### Opciones de Seguridad\n50. `--no-security-check` — Omite el escaneo de datos sensibles (API keys, contraseñas).\n\n### Opciones de Conteo de Tokens\n51. `--token-count-encoding <encoding>` — Modelo de tokenización (por defecto: `o200k_base`).\n52. `--token-budget <number>` — Falla con código de salida no cero si el resultado excede N tokens.\n\n### MCP\n53. `--mcp` — Ejecuta como servidor Model Context Protocol.\n\n### Generación de Skills (Experimental)\n54. `--skill-generate [name]` — Genera salida en formato Claude Agent Skills.\n55. `--skill-project-name <name>` — Sobreescribe el nombre del proyecto en Skills.\n56. `--skill-output <path>` — Ruta de salida directa para Skills.\n57. `--force` (`-f`) — Omite todos los prompts de confirmación.\n\n### Modo Watch\n58. `--watch` (`-w`) — Observa cambios de archivos y re-empaqueta automáticamente.\n\n---\n\n**Total: 58 flags** (`--xxx`).",
+          "cost_usd": 0.018027,
+          "elapsed_s": 48.2,
+          "failed": false,
+          "turns": 4,
+          "tool_calls": 5,
+          "score": {
+            "f1": 0.97,
+            "precision": 0.96,
+            "recall": 0.98,
+            "tp": 48,
+            "pred_n": 50,
+            "ref_n": 49,
+            "missing": [
+              "--truncate-base"
+            ],
+            "extra": [
+              "--truncate-base64",
+              "--xxx"
+            ]
+          },
+          "f1": 0.97,
+          "response": "Aquí están **todos los flags** (`--xxx`) que define el CLI de repomix, según su definición en `src/cli/cliRun.ts`:\n\n### Opciones Básicas\n1. `--version` (`-v`) — Muestra la versión y sale.\n\n### Opciones de Entrada/Salida\n2. `--verbose` — Activa logs de debug detallados (contradice `--quiet`).\n3. `--quiet` — Suprime toda salida excepto errores (contradice `--verbose`).\n4. `--stdout` — Escribe el resultado directamente a stdout en lugar de un archivo (contradice `--output`).\n5. `--stdin` — Lee rutas de archivo desde stdin, una por línea.\n6. `--copy` — Copia el resultado generado al portapapeles.\n7. `--token-count-tree [threshold]` — Muestra el árbol de archivos con conteo de tokens; umbral opcional.\n8. `--top-files-len <number>` — Número de archivos más grandes a mostrar en el resumen (por defecto: 5).\n\n### Opciones de Salida de Repomix\n9. `--output <file>` (`-o`) — Ruta del archivo de salida (por defecto: `repomix-output.xml`; usa `-` para stdout).\n10. `--style <type>` — Formato de salida: `xml`, `markdown`, `json`, o `plain`.\n11. `--output-file-path-style <style>` — Estilo de rutas en la salida: `target-relative` o `cwd-relative`.\n12. `--parsable-style` — Escapa caracteres especiale"
+        },
+        "rlm": {
+          "text": "Repomix CLI - Lista completa de flags de línea de comandos (--xxx)\n\n1. --version, -v\n   Muestra la información de versión y sale.\n\n2. --verbose\n   Habilita logging de depuración detallado (muestra procesamiento de archivos, conteos de tokens y detalles de configuración). Conflicta con --quiet.\n\n3. --quiet\n   Suprime toda la salida de consola excepto errores (útil para scripts). Conflicta con --verbose.\n\n4. --stdout\n   Escribe la salida empaquetada directamente a stdout en lugar de un archivo (suprime todo logging). Conflicta con --output.\n\n5. --stdin\n   Lee rutas de archivo desde stdin, una por línea (los archivos especificados se procesan directamente).\n\n6. --copy\n   Copia la salida generada al portapapeles del sistema después del procesamiento.\n\n7. --token-count-tree [threshold]\n   Muestra el árbol de archivos con conteos de tokens; umbral opcional para mostrar solo archivos con ≥N tokens (ej: --token-count-tree 100).\n\n8. --top-files-len <number>\n   Número de archivos más grandes a mostrar en el resumen (default: 5, ej: --top-files-len 20).\n\n9. --output, -o <file>\n   Ruta del archivo de salida (default: repomix-output.xml, usa \"-\" para stdout).\n\n10. --style <type>\n    Formato de salida: xml, markdown, json, o plain (default: xml).\n\n11. --output-file-path-style <style>\n    Cómo se muestran las rutas de archivo en la salida: target-relative o cwd-relative (default: target-relative).\n\n12. --parsable-style\n    Escapa caracteres especiales para asegurar XML/Markdown válido (necesario cuando la salida contiene código que rompe el formato).\n\n13. --compress\n    Extrae estructura esencial de código (clases, funciones, interfaces) usando análisis Tree-sitter.\n\n14. --output-show-line-numbers\n    Prefija cada línea con su número de línea en la salida.\n\n15. --no-file-summary\n    Omite la sección de resumen de archivos de la salida.\n\n16. --no-directory-structure\n    Omite la visualización del árbol de directorios de la salida.\n\n17. --no-files\n    Genera solo metadatos sin contenidos de archivo (útil para análisis de repositorio).\n\n18. --remove-comments\n    Elimina todos los comentarios de código antes de empaquetar.\n\n19. --remove-empty-lines\n    Elimina líneas en blanco de todos los archivos.\n\n20. --truncate-base64\n    Trunca cadenas de datos base64 largas para reducir tamaño de salida.\n\n21. --header-text <text>\n    Texto personalizado para incluir al inicio de la salida.\n\n22. --instruction-file-path <path>\n    Ruta a archivo conteniendo instrucciones personalizadas a incluir en la salida.\n\n23. --include-empty-directories\n    Incluye carpetas sin archivos en la estructura de directorios.\n\n24. --include-full-directory-structure\n    Muestra el árbol completo del repositorio en la sección de Estructura de Directorios, incluso al usar patrones --include.\n\n25. --no-git-sort-by-changes\n    No ordena archivos por frecuencia de cambios git (default: archivos más cambiados primero).\n\n26. --include-diffs\n    Añade sección de git diff mostrando cambios del working tree y staged.\n\n27. --include-logs\n    Añade historial de commits git con mensajes y archivos cambiados.\n\n28. --include-logs-count <count>\n    Número de commits recientes a incluir con --include-logs (default: 50).\n\n29. --include <patterns>\n    Incluye solo archivos que coincidan con estos patrones glob (separados por coma, ej: \"src/**/*.js,*.md\").\n\n30. --ignore, -i <patterns>\n    Patrones adicionales a excluir (separados por coma, ej: \"*.test.js,docs/**\").\n\n31. --no-gitignore\n    No usa reglas .gitignore para filtrar archivos.\n\n32. --no-dot-ignore\n    No usa reglas .ignore para filtrar archivos.\n\n33. --no-default-patterns\n    No aplica patrones de ignorado incorporados (node_modules, .git, directorios de build, etc.).\n\n34. --remote <url>\n    Clona y empaqueta un repositorio remoto (URL de GitHub o formato user/repo).\n\n35. --remote-branch <name>\n    Branch, tag o commit específico a usar (default: branch por defecto del repositorio).\n\n36. --remote-trust-config\n    Confía y carga archivos de configuración de repositorios remotos (deshabilitado por defecto por seguridad).\n\n37. --config, -c <path>\n    Usa archivo de configuración personalizado en lugar de repomix.config.json.\n\n38. --init\n    Crea un nuevo archivo repomix.config.json con valores por defecto.\n\n39. --global\n    Con --init, crea la configuración en el directorio home en lugar del directorio actual.\n\n40. --no-security-check\n    Omite el escaneo de datos sensibles como API keys y contraseñas.\n\n41. --token-count-encoding <encoding>\n    Modelo de tokenizador para conteo: o200k_base (GPT-4o), cl100k_base (GPT-3.5/4), etc. (default: o200k_base).\n\n42. --token-budget <number>\n    Falla con código de salida no-cero cuando la salida empaquetada excede N tokens (guarda para límites de contexto CI/agente).\n\n43. --mcp\n    Ejecuta como servidor Model Context Protocol para integración con herramientas de IA.\n\n44. --skill-generate [name]\n    Genera salida en formato Claude Agent Skills al directorio .claude/skills/<name>/ (nombre auto-generado si se omite).\n\n45. --skill-project-name <name>\n    Sobrescribe el nombre de proyecto usado en descripciones de Skills generadas.\n\n46. --skill-output <path>\n    Especifica la ruta del directorio de salida del skill directamente (omite el prompt de ubicación).\n\n47. --force, -f\n    Omite todos los prompts de confirmación (actualmente: sobrescritura de directorio de skill).\n\n48. --watch, -w\n    Observa cambios de archivos y re-empaqueta automáticamente.\n\n49. --split-output <size>\n    Divide la salida en múltiples archivos numerados (ej: repomix-output.1.xml, repomix-output.2.xml); tamaño como 500kb, 2mb, o 2.5mb.",
+          "cost_usd": 0.19630325,
+          "elapsed_s": 223.6,
+          "failed": false,
+          "turns": null,
+          "tool_calls": null,
+          "score": {
+            "f1": 0.97,
+            "precision": 0.96,
+            "recall": 0.98,
+            "tp": 48,
+            "pred_n": 50,
+            "ref_n": 49,
+            "missing": [
+              "--truncate-base"
+            ],
+            "extra": [
+              "--truncate-base64",
+              "--xxx"
+            ]
+          },
+          "f1": 0.97,
+          "response": "Repomix CLI - Lista completa de flags de línea de comandos (--xxx)\n\n1. --version, -v\n   Muestra la información de versión y sale.\n\n2. --verbose\n   Habilita logging de depuración detallado (muestra procesamiento de archivos, conteos de tokens y detalles de configuración). Conflicta con --quiet.\n\n3. --quiet\n   Suprime toda la salida de consola excepto errores (útil para scripts). Conflicta con --verbose.\n\n4. --stdout\n   Escribe la salida empaquetada directamente a stdout en lugar de un archivo (suprime todo logging). Conflicta con --output.\n\n5. --stdin\n   Lee rutas de archivo desde stdin, una por línea (los archivos especificados se procesan directamente).\n\n6. --copy\n   Copia la salida generada al portapapeles del sistema después del procesamiento.\n\n7. --token-count-tree [threshold]\n   Muestra el árbol de archivos con conteos de tokens; umbral opcional para mostrar solo archivos con ≥N tokens (ej: --token-count-tree 100).\n\n8. --top-files-len <number>\n   Número de archivos más grandes a mostrar en el resumen (default: 5, ej: --top-files-len 20).\n\n9. --output, -o <file>\n   Ruta del archivo de salida (default: repomix-output.xml, usa \"-\" para stdout).\n\n10. --style <type>\n    Formato de "
+        }
+      }
+    },
+    {
+      "id": "L2",
+      "tier": "linear",
+      "arms": {
+        "vanilla": {
+          "text": "Valores por defecto definidos en **`src/config/configSchema.ts`** (`repomixConfigDefaultSchema` y `defaultFilePathMap`):\n\n### `input`\n- **`maxFileSize`**: `52428800` (50 MB)\n\n### `output`\n- **`filePath`**: `repomix-output.xml` (por defecto; varía según `style`: `.md`, `.txt`, `.json`)\n- **`style`**: `xml`\n- **`filePathStyle`**: `target-relative`\n- **`parsableStyle`**: `false`\n- **`headerText`**: *(sin default)*\n- **`instructionFilePath`**: *(sin default)*\n- **`fileSummary`**: `true`\n- **`directoryStructure`**: `true`\n- **`files`**: `true`\n- **`removeComments`**: `false`\n- **`removeEmptyLines`**: `false`\n- **`compress`**: `false`\n- **`patterns`**: *(sin default)*\n- **`topFilesLength`**: `5`\n- **`showLineNumbers`**: `false`\n- **`truncateBase64`**: `false`\n- **`copyToClipboard`**: `false`\n- **`includeEmptyDirectories`**: *(sin default)*\n- **`includeFullDirectoryStructure`**: `false`\n- **`splitOutput`**: *(sin default)*\n- **`tokenCountTree`**: `false`\n- **`tokenBudget`**: *(sin default)*\n\n### `output.git`\n- **`sortByChanges`**: `true`\n- **`sortByChangesMaxCommits`**: `100`\n- **`includeDiffs`**: `false`\n- **`includeLogs`**: `false`\n- **`includeLogsCount`**: `50`\n\n### `include`\n- **`include`**: `[]`\n\n### `ignore`\n- **`useGitignore`**: `true`\n- **`useDotIgnore`**: `true`\n- **`useDefaultPatterns`**: `true`\n- **`customPatterns`**: `[]`\n\n### `security`\n- **`enableSecurityCheck`**: `true`\n\n### `tokenCount`\n- **`encoding`**: `o200k_base`\n\n---\n\n*Nota:* Las opciones sin default explícito quedan como `undefined` tras el merge. La fuente de estos valores es `defaultConfig = v.parse(repomixConfigDefaultSchema, ...)` en `src/config/configSchema.ts`.",
+          "cost_usd": 0.18561465,
+          "elapsed_s": 65.6,
+          "failed": false,
+          "turns": null,
+          "tool_calls": null,
+          "score": {
+            "f1": 0.962,
+            "coverage": 0.962,
+            "correct": 25,
+            "ref_n": 26,
+            "missing": [
+              "output.files"
+            ]
+          },
+          "f1": 0.962,
+          "response": "Valores por defecto definidos en **`src/config/configSchema.ts`** (`repomixConfigDefaultSchema` y `defaultFilePathMap`):\n\n### `input`\n- **`maxFileSize`**: `52428800` (50 MB)\n\n### `output`\n- **`filePath`**: `repomix-output.xml` (por defecto; varía según `style`: `.md`, `.txt`, `.json`)\n- **`style`**: `xml`\n- **`filePathStyle`**: `target-relative`\n- **`parsableStyle`**: `false`\n- **`headerText`**: *(sin default)*\n- **`instructionFilePath`**: *(sin default)*\n- **`fileSummary`**: `true`\n- **`directoryStructure`**: `true`\n- **`files`**: `true`\n- **`removeComments`**: `false`\n- **`removeEmptyLines`**: `false`\n- **`compress`**: `false`\n- **`patterns`**: *(sin default)*\n- **`topFilesLength`**: `5`\n- **`showLineNumbers`**: `false`\n- **`truncateBase64`**: `false`\n- **`copyToClipboard`**: `false`\n- **`includeEmptyDirectories`**: *(sin default)*\n- **`includeFullDirectoryStructure`**: `false`\n- **`splitOutput`**: *(sin default)*\n- **`tokenCountTree`**: `false`\n- **`tokenBudget`**: *(sin default)*\n\n### `output.git`\n- **`sortByChanges`**: `true`\n- **`sortByChangesMaxCommits`**: `100`\n- **`includeDiffs`**: `false`\n- **`includeLogs`**: `false`\n- **`includeLogsCount`**: `50`\n\n### `include`\n- **`incl"
+        },
+        "pi": {
+          "text": "Aquí están **todas** las opciones de configuración de Repomix según el schema (`src/config/configSchema.ts`), agrupadas jerárquicamente con su valor por defecto. Si una opción no tiene default definido en el schema, se indica como _undefined_.\n\n### Opciones raíz\n| Clave | Tipo | Valor por defecto |\n|---|---|---|\n| `$schema` | `string` | _undefined_ |\n\n---\n\n### `input`\n| Clave | Tipo | Valor por defecto |\n|---|---|---|\n| `input.maxFileSize` | `number` (entero ≥1) | `52428800` (50 MB) |\n\n---\n\n### `output`\n| Clave | Tipo | Valor por defecto |\n|---|---|---|\n| `output.filePath` | `string` | `\"repomix-output.xml\"` |\n| `output.style` | `\"xml\" \\| \"markdown\" \\| \"json\" \\| \"plain\"` | `\"xml\"` |\n| `output.filePathStyle` | `\"target-relative\" \\| \"cwd-relative\"` | `\"target-relative\"` |\n| `output.parsableStyle` | `boolean` | `false` |\n| `output.headerText` | `string` | _undefined_ |\n| `output.instructionFilePath` | `string` | _undefined_ |\n| `output.fileSummary` | `boolean` | `true` |\n| `output.directoryStructure` | `boolean` | `true` |\n| `output.files` | `boolean` | `true` |\n| `output.removeComments` | `boolean` | `false` |\n| `output.removeEmptyLines` | `boolean` | `false` |\n| `output.compress` | `boolean` | `false` |\n| `output.patterns` | `OutputPattern[]` | _undefined_ |\n| `output.topFilesLength` | `number` (entero ≥0) | `5` |\n| `output.showLineNumbers` | `boolean` | `false` |\n| `output.truncateBase64` | `boolean` | `false` |\n| `output.copyToClipboard` | `boolean` | `false` |\n| `output.includeEmptyDirectories` | `boolean` | _undefined_ |\n| `output.includeFullDirectoryStructure` | `boolean` | `false` |\n| `output.splitOutput` | `number` (entero ≥1) | _undefined_ |\n| `output.tokenCountTree` | `boolean \\| number \\| string` | `false` |\n| `output.tokenBudget` | `number` (entero ≥1) | _undefined_ (sin límite) |\n\n#### `output.git`\n| Clave | Tipo | Valor por defecto |\n|---|---|---|\n| `output.git.sortByChanges` | `boolean` | `true` |\n| `output.git.sortByChangesMaxCommits` | `number` (entero ≥1) | `100` |\n| `output.git.includeDiffs` | `boolean` | `false` |\n| `output.git.includeLogs` | `boolean` | `false` |\n| `output.git.includeLogsCount` | `number` (entero ≥1) | `50` |\n\n---\n\n### `include`\n| Clave | Tipo | Valor por defecto |\n|---|---|---|\n| `include` | `string[]` | `[]` |\n\n---\n\n### `ignore`\n| Clave | Tipo | Valor por defecto |\n|---|---|---|\n| `ignore.useGitignore` | `boolean` | `true` |\n| `ignore.useDotIgnore` | `boolean` | `true` |\n| `ignore.useDefaultPatterns` | `boolean` | `true` |\n| `ignore.customPatterns` | `string[]` | `[]` |\n\n---\n\n### `security`\n| Clave | Tipo | Valor por defecto |\n|---|---|---|\n| `security.enableSecurityCheck` | `boolean` | `true` |\n\n---\n\n### `tokenCount`\n| Clave | Tipo | Valor por defecto |\n|---|---|---|\n| `tokenCount.encoding` | `string` (de la lista `TOKEN_ENCODINGS`) | `\"o200k_base\"` |\n\n---\n\n### Opciones exclusivas del CLI / runtime\nEstas opciones aparecen en el schema (`repomixConfigCliSchema` / `repomixConfigMergedSchema`) pero no tienen valor por defecto:\n\n| Clave | Tipo | Valor por defecto |\n|---|---|---|\n| `output.stdout` | `boolean` | _undefined_ |\n| `skillGenerate` | `string \\| boolean` | _undefined_ |\n| `cwd` | `string` | _undefined_ (requerido en runtime) |\n\n---\n\n> **Nota:** Los valores por defecto listados provienen de `repomixConfigDefaultSchema`. Si una opción no tiene default explícito, Valibot la deja como `undefined`, lo que significa que Repomix usa su comportamiento interno (_e.g._, `tokenBudget` sin límite, o `patterns`/ `splitOutput` desactivados).",
+          "cost_usd": 0.017971,
+          "elapsed_s": 42.0,
+          "failed": false,
+          "turns": 5,
+          "tool_calls": 4,
+          "score": {
+            "f1": 0.962,
+            "coverage": 0.962,
+            "correct": 25,
+            "ref_n": 26,
+            "missing": [
+              "output.files"
+            ]
+          },
+          "f1": 0.962,
+          "response": "Aquí están **todas** las opciones de configuración de Repomix según el schema (`src/config/configSchema.ts`), agrupadas jerárquicamente con su valor por defecto. Si una opción no tiene default definido en el schema, se indica como _undefined_.\n\n### Opciones raíz\n| Clave | Tipo | Valor por defecto |\n|---|---|---|\n| `$schema` | `string` | _undefined_ |\n\n---\n\n### `input`\n| Clave | Tipo | Valor por defecto |\n|---|---|---|\n| `input.maxFileSize` | `number` (entero ≥1) | `52428800` (50 MB) |\n\n---\n\n### `output`\n| Clave | Tipo | Valor por defecto |\n|---|---|---|\n| `output.filePath` | `string` | `\"repomix-output.xml\"` |\n| `output.style` | `\"xml\" \\| \"markdown\" \\| \"json\" \\| \"plain\"` | `\"xml\"` |\n| `output.filePathStyle` | `\"target-relative\" \\| \"cwd-relative\"` | `\"target-relative\"` |\n| `output.parsableStyle` | `boolean` | `false` |\n| `output.headerText` | `string` | _undefined_ |\n| `output.instructionFilePath` | `string` | _undefined_ |\n| `output.fileSummary` | `boolean` | `true` |\n| `output.directoryStructure` | `boolean` | `true` |\n| `output.files` | `boolean` | `true` |\n| `output.removeComments` | `boolean` | `false` |\n| `output.removeEmptyLines` | `boolean` | `false` |\n| `output.compress` | "
+        },
+        "rlm": {
+          "text": "# Opciones de configuración de Repomix con valores por defecto\n\nBasado en `src/config/configSchema.ts` (`repomixConfigDefaultSchema`).\n\n---\n\n## `input`\n| Opción | Tipo | Valor por defecto |\n|--------|------|-------------------|\n| `input.maxFileSize` | `number` | `52428800` (50 MB) |\n\n---\n\n## `output`\n| Opción | Tipo | Valor por defecto |\n|--------|------|-------------------|\n| `output.filePath` | `string` | `\"repomix-output.xml\"` |\n| `output.style` | `string` | `\"xml\"` |\n| `output.filePathStyle` | `string` | `\"target-relative\"` |\n| `output.parsableStyle` | `boolean` | `false` |\n| `output.headerText` | `string` | *(sin valor por defecto)* |\n| `output.instructionFilePath` | `string` | *(sin valor por defecto)* |\n| `output.fileSummary` | `boolean` | `true` |\n| `output.directoryStructure` | `boolean` | `true` |\n| `output.files` | `boolean` | `true` |\n| `output.removeComments` | `boolean` | `false` |\n| `output.removeEmptyLines` | `boolean` | `false` |\n| `output.compress` | `boolean` | `false` |\n| `output.patterns` | `array` | *(sin valor por defecto)* |\n| `output.topFilesLength` | `number` | `5` |\n| `output.showLineNumbers` | `boolean` | `false` |\n| `output.truncateBase64` | `boolean` | `false` |\n| `output.copyToClipboard` | `boolean` | `false` |\n| `output.includeEmptyDirectories` | `boolean` | *(sin valor por defecto)* |\n| `output.includeFullDirectoryStructure` | `boolean` | `false` |\n| `output.splitOutput` | `number` | *(sin valor por defecto)* |\n| `output.tokenCountTree` | `boolean \\| number \\| string` | `false` |\n| `output.tokenBudget` | `number` | *(sin valor por defecto)* → `undefined` significa ilimitado |\n\n### `output.git`\n| Opción | Tipo | Valor por defecto |\n|--------|------|-------------------|\n| `output.git.sortByChanges` | `boolean` | `true` |\n| `output.git.sortByChangesMaxCommits` | `number` | `100` |\n| `output.git.includeDiffs` | `boolean` | `false` |\n| `output.git.includeLogs` | `boolean` | `false` |\n| `output.git.includeLogsCount` | `number` | `50` |\n\n---\n\n## `include`\n| Opción | Tipo | Valor por defecto |\n|--------|------|-------------------|\n| `include` | `string[]` | `[]` |\n\n---\n\n## `ignore`\n| Opción | Tipo | Valor por defecto |\n|--------|------|-------------------|\n| `ignore.useGitignore` | `boolean` | `true` |\n| `ignore.useDotIgnore` | `boolean` | `true` |\n| `ignore.useDefaultPatterns` | `boolean` | `true` |\n| `ignore.customPatterns` | `string[]` | `[]` |\n\n---\n\n## `security`\n| Opción | Tipo | Valor por defecto |\n|--------|------|-------------------|\n| `security.enableSecurityCheck` | `boolean` | `true` |\n\n---\n\n## `tokenCount`\n| Opción | Tipo | Valor por defecto |\n|--------|------|-------------------|\n| `tokenCount.encoding` | `string` | `\"o200k_base\"` |\n\n---\n\n## Notas adicionales\n\n- Las opciones marcadas como *(sin valor por defecto)* son opcionales (`v.optional`) pero no tienen un valor explícito definido en `repomixConfigDefaultSchema`; si no se especifican, su valor será `undefined`.\n- `output.tokenBudget` no tiene default intencionalmente: `undefined` significa presupuesto ilimitado.\n- `output.filePath` depende del mapa `defaultFilePathMap`, cuyo valor para `style: 'xml'` (default) es `\"repomix-output.xml\"`. Los valores posibles según estilo son:\n  - `xml` → `\"repomix-output.xml\"`\n  - `markdown` → `\"repomix-output.md\"`\n  - `plain` → `\"repomix-output.txt\"`\n  - `json` → `\"repomix-output.json\"`\n- Opciones exclusivas de CLI (no aplican al archivo de configuración estándar):\n  - `output.stdout` (`boolean`, opcional)\n  - `skillGenerate` (`string | boolean`, opcional)",
+          "cost_usd": 0.0457797,
+          "elapsed_s": 75.4,
+          "failed": false,
+          "turns": null,
+          "tool_calls": null,
+          "score": {
+            "f1": 0.962,
+            "coverage": 0.962,
+            "correct": 25,
+            "ref_n": 26,
+            "missing": [
+              "output.files"
+            ]
+          },
+          "f1": 0.962,
+          "response": "# Opciones de configuración de Repomix con valores por defecto\n\nBasado en `src/config/configSchema.ts` (`repomixConfigDefaultSchema`).\n\n---\n\n## `input`\n| Opción | Tipo | Valor por defecto |\n|--------|------|-------------------|\n| `input.maxFileSize` | `number` | `52428800` (50 MB) |\n\n---\n\n## `output`\n| Opción | Tipo | Valor por defecto |\n|--------|------|-------------------|\n| `output.filePath` | `string` | `\"repomix-output.xml\"` |\n| `output.style` | `string` | `\"xml\"` |\n| `output.filePathStyle` | `string` | `\"target-relative\"` |\n| `output.parsableStyle` | `boolean` | `false` |\n| `output.headerText` | `string` | *(sin valor por defecto)* |\n| `output.instructionFilePath` | `string` | *(sin valor por defecto)* |\n| `output.fileSummary` | `boolean` | `true` |\n| `output.directoryStructure` | `boolean` | `true` |\n| `output.files` | `boolean` | `true` |\n| `output.removeComments` | `boolean` | `false` |\n| `output.removeEmptyLines` | `boolean` | `false` |\n| `output.compress` | `boolean` | `false` |\n| `output.patterns` | `array` | *(sin valor por defecto)* |\n| `output.topFilesLength` | `number` | `5` |\n| `output.showLineNumbers` | `boolean` | `false` |\n| `output.truncateBase64` | `boolean` |"
+        }
+      }
+    },
+    {
+      "id": "Q1",
+      "tier": "quadratic",
+      "arms": {
+        "vanilla": {
+          "text": "El contexto proporcionado está truncado y **no incluye la lista de archivos bajo `tests/`**, por lo que no puedo comparar contra la estructura de `src/` para determinar qué archivos `.ts` carecen de test correspondiente.",
+          "cost_usd": 0.18395214999999998,
+          "elapsed_s": 39.9,
+          "failed": false,
+          "turns": null,
+          "tool_calls": null,
+          "score": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0,
+            "pred_n": 0,
+            "ref_n": 40,
+            "missing": [
+              "cli/types.ts",
+              "config/defaultIgnore.ts",
+              "core/file/fileTypes.ts",
+              "core/file/workers/fileProcessWorker.ts",
+              "core/git/gitRemoteUrl.ts",
+              "core/metrics/metricsWorkerRunner.ts",
+              "core/metrics/tokenCounterFactory.ts",
+              "core/metrics/tokenEncodings.ts",
+              "core/metrics/workers/types.ts",
+              "core/output/outputGeneratorTypes.ts"
+            ],
+            "extra": []
+          },
+          "f1": 0.0,
+          "response": "El contexto proporcionado está truncado y **no incluye la lista de archivos bajo `tests/`**, por lo que no puedo comparar contra la estructura de `src/` para determinar qué archivos `.ts` carecen de test correspondiente."
+        },
+        "pi": {
+          "text": "Los archivos `.ts` bajo `src/` que **no** tienen un archivo de test correspondiente (coincidencia nominal case-insensitive) en `tests/` son:\n\n- `cli/types.ts`\n- `config/defaultIgnore.ts`\n- `core/file/fileTypes.ts`\n- `core/file/workers/fileProcessWorker.ts`\n- `core/git/gitRemoteUrl.ts`\n- `core/metrics/metricsWorkerRunner.ts`\n- `core/metrics/tokenCounterFactory.ts`\n- `core/metrics/tokenEncodings.ts`\n- `core/metrics/workers/types.ts`\n- `core/output/outputGeneratorTypes.ts`\n- `core/output/outputStyleUtils.ts`\n- `core/tokenCount/types.ts`\n- `core/treeSitter/languageConfig.ts`\n- `core/treeSitter/parseStrategies/BaseParseStrategy.ts`\n- `core/treeSitter/parseStrategies/CssParseStrategy.ts`\n- `core/treeSitter/parseStrategies/DefaultParseStrategy.ts`\n- `core/treeSitter/parseStrategies/GoParseStrategy.ts`\n- `core/treeSitter/parseStrategies/PythonParseStrategy.ts`\n- `core/treeSitter/parseStrategies/TypeScriptParseStrategy.ts`\n- `core/treeSitter/parseStrategies/VueParseStrategy.ts`\n- `core/treeSitter/queries/queryC.ts`\n- `core/treeSitter/queries/queryCpp.ts`\n- `core/treeSitter/queries/queryCSharp.ts`\n- `core/treeSitter/queries/queryCss.ts`\n- `core/treeSitter/queries/queryDart.ts`\n- `core/treeSitter/queries/queryGo.ts`\n- `core/treeSitter/queries/queryJava.ts`\n- `core/treeSitter/queries/queryJavascript.ts`\n- `core/treeSitter/queries/queryPhp.ts`\n- `core/treeSitter/queries/queryPython.ts`\n- `core/treeSitter/queries/queryRuby.ts`\n- `core/treeSitter/queries/queryRust.ts`\n- `core/treeSitter/queries/querySolidity.ts`\n- `core/treeSitter/queries/querySwift.ts`\n- `core/treeSitter/queries/queryTypescript.ts`\n- `core/treeSitter/queries/queryVue.ts`\n- `index.ts`\n- `shared/constants.ts`\n- `shared/types.ts`\n\nSon **39 archivos** en total (sin contar archivos `.d.ts`).",
+          "cost_usd": 0.038976,
+          "elapsed_s": 109.8,
+          "failed": false,
+          "turns": 12,
+          "tool_calls": 12,
+          "score": {
+            "f1": 0.987,
+            "precision": 1.0,
+            "recall": 0.975,
+            "tp": 39,
+            "pred_n": 39,
+            "ref_n": 40,
+            "missing": [
+              "core/treeSitter/languageParser.ts"
+            ],
+            "extra": []
+          },
+          "f1": 0.987,
+          "response": "Los archivos `.ts` bajo `src/` que **no** tienen un archivo de test correspondiente (coincidencia nominal case-insensitive) en `tests/` son:\n\n- `cli/types.ts`\n- `config/defaultIgnore.ts`\n- `core/file/fileTypes.ts`\n- `core/file/workers/fileProcessWorker.ts`\n- `core/git/gitRemoteUrl.ts`\n- `core/metrics/metricsWorkerRunner.ts`\n- `core/metrics/tokenCounterFactory.ts`\n- `core/metrics/tokenEncodings.ts`\n- `core/metrics/workers/types.ts`\n- `core/output/outputGeneratorTypes.ts`\n- `core/output/outputStyleUtils.ts`\n- `core/tokenCount/types.ts`\n- `core/treeSitter/languageConfig.ts`\n- `core/treeSitter/parseStrategies/BaseParseStrategy.ts`\n- `core/treeSitter/parseStrategies/CssParseStrategy.ts`\n- `core/treeSitter/parseStrategies/DefaultParseStrategy.ts`\n- `core/treeSitter/parseStrategies/GoParseStrategy.ts`\n- `core/treeSitter/parseStrategies/PythonParseStrategy.ts`\n- `core/treeSitter/parseStrategies/TypeScriptParseStrategy.ts`\n- `core/treeSitter/parseStrategies/VueParseStrategy.ts`\n- `core/treeSitter/queries/queryC.ts`\n- `core/treeSitter/queries/queryCpp.ts`\n- `core/treeSitter/queries/queryCSharp.ts`\n- `core/treeSitter/queries/queryCss.ts`\n- `core/treeSitter/queries/queryDart.ts`\n- `core/treeSi"
+        },
+        "rlm": {
+          "text": "cli/types.ts\nconfig/defaultIgnore.ts\ncore/file/fileTypes.ts\ncore/file/workers/fileProcessWorker.ts\ncore/git/gitRemoteUrl.ts\ncore/metrics/metricsWorkerRunner.ts\ncore/metrics/tokenCounterFactory.ts\ncore/metrics/tokenEncodings.ts\ncore/metrics/workers/types.ts\ncore/output/outputGeneratorTypes.ts\ncore/output/outputStyleUtils.ts\ncore/security/workers/secretlint.d.ts\ncore/tokenCount/types.ts\ncore/treeSitter/languageConfig.ts\ncore/treeSitter/parseStrategies/BaseParseStrategy.ts\ncore/treeSitter/parseStrategies/CssParseStrategy.ts\ncore/treeSitter/parseStrategies/DefaultParseStrategy.ts\ncore/treeSitter/parseStrategies/GoParseStrategy.ts\ncore/treeSitter/parseStrategies/PythonParseStrategy.ts\ncore/treeSitter/parseStrategies/TypeScriptParseStrategy.ts\ncore/treeSitter/parseStrategies/VueParseStrategy.ts\ncore/treeSitter/queries/queryC.ts\ncore/treeSitter/queries/queryCSharp.ts\ncore/treeSitter/queries/queryCpp.ts\ncore/treeSitter/queries/queryCss.ts\ncore/treeSitter/queries/queryDart.ts\ncore/treeSitter/queries/queryGo.ts\ncore/treeSitter/queries/queryJava.ts\ncore/treeSitter/queries/queryJavascript.ts\ncore/treeSitter/queries/queryPhp.ts\ncore/treeSitter/queries/queryPython.ts\ncore/treeSitter/queries/queryRuby.ts\ncore/treeSitter/queries/queryRust.ts\ncore/treeSitter/queries/querySolidity.ts\ncore/treeSitter/queries/querySwift.ts\ncore/treeSitter/queries/queryTypescript.ts\ncore/treeSitter/queries/queryVue.ts\nindex.ts\nshared/constants.ts\nshared/types.ts\ntypes/git-url-parse.d.ts",
+          "cost_usd": 0.0741828,
+          "elapsed_s": 202.6,
+          "failed": false,
+          "turns": null,
+          "tool_calls": null,
+          "score": {
+            "f1": 0.987,
+            "precision": 1.0,
+            "recall": 0.975,
+            "tp": 39,
+            "pred_n": 39,
+            "ref_n": 40,
+            "missing": [
+              "core/treeSitter/languageParser.ts"
+            ],
+            "extra": []
+          },
+          "f1": 0.987,
+          "response": "cli/types.ts\nconfig/defaultIgnore.ts\ncore/file/fileTypes.ts\ncore/file/workers/fileProcessWorker.ts\ncore/git/gitRemoteUrl.ts\ncore/metrics/metricsWorkerRunner.ts\ncore/metrics/tokenCounterFactory.ts\ncore/metrics/tokenEncodings.ts\ncore/metrics/workers/types.ts\ncore/output/outputGeneratorTypes.ts\ncore/output/outputStyleUtils.ts\ncore/security/workers/secretlint.d.ts\ncore/tokenCount/types.ts\ncore/treeSitter/languageConfig.ts\ncore/treeSitter/parseStrategies/BaseParseStrategy.ts\ncore/treeSitter/parseStrategies/CssParseStrategy.ts\ncore/treeSitter/parseStrategies/DefaultParseStrategy.ts\ncore/treeSitter/parseStrategies/GoParseStrategy.ts\ncore/treeSitter/parseStrategies/PythonParseStrategy.ts\ncore/treeSitter/parseStrategies/TypeScriptParseStrategy.ts\ncore/treeSitter/parseStrategies/VueParseStrategy.ts\ncore/treeSitter/queries/queryC.ts\ncore/treeSitter/queries/queryCSharp.ts\ncore/treeSitter/queries/queryCpp.ts\ncore/treeSitter/queries/queryCss.ts\ncore/treeSitter/queries/queryDart.ts\ncore/treeSitter/queries/queryGo.ts\ncore/treeSitter/queries/queryJava.ts\ncore/treeSitter/queries/queryJavascript.ts\ncore/treeSitter/queries/queryPhp.ts\ncore/treeSitter/queries/queryPython.ts\ncore/treeSitter/queries/quer"
+        }
+      }
+    },
+    {
+      "id": "Q2",
+      "tier": "quadratic",
+      "arms": {
+        "vanilla": {
+          "text": "El contexto proporcionado está truncado y **no incluye la lista completa de archivos** bajo `tests/` ni `src/`, por lo que no puedo determinar qué archivos de test carecen de un archivo fuente correspondiente.\n\nPara responder con precisión se necesitaría el árbol completo de ambos directorios (p. ej., vía `find tests/ -type f` y `find src/ -type f`).",
+          "cost_usd": 0.18039655,
+          "elapsed_s": 26.4,
+          "failed": false,
+          "turns": null,
+          "tool_calls": null,
+          "score": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0,
+            "pred_n": 0,
+            "ref_n": 15,
+            "missing": [
+              "cli/actions/defaultAction.buildCliConfig.test.ts",
+              "cli/actions/defaultAction.tokenBudget.test.ts",
+              "cli/actions/defaultAction.tokenCountTree.test.ts",
+              "cli/actions/diffsFlag.test.ts",
+              "cli/cliReport.binaryFiles.test.ts",
+              "config/configLoad.integration.test.ts",
+              "core/file/binaryDetectionSpec.test.ts",
+              "core/file/dotIgnoreSpec.test.ts",
+              "core/file/emptyDirectorySpec.test.ts",
+              "core/file/fileProcess.inclusionLevel.test.ts"
+            ],
+            "extra": []
+          },
+          "f1": 0.0,
+          "response": "El contexto proporcionado está truncado y **no incluye la lista completa de archivos** bajo `tests/` ni `src/`, por lo que no puedo determinar qué archivos de test carecen de un archivo fuente correspondiente.\n\nPara responder con precisión se necesitaría el árbol completo de ambos directorios (p. ej., vía `find tests/ -type f` y `find src/ -type f`)."
+        },
+        "pi": {
+          "text": "Aquí están los archivos de test que **no** tienen un archivo fuente equivalente en `src/`:\n\n| # | Archivo de test |\n|---|-----------------|\n| 1 | `tests/cli/actions/diffsFlag.test.ts` |\n| 2 | `tests/core/file/binaryDetectionSpec.test.ts` |\n| 3 | `tests/core/file/dotIgnoreSpec.test.ts` |\n| 4 | `tests/core/file/emptyDirectorySpec.test.ts` |\n| 5 | `tests/core/file/processOrderSpec.test.ts` |\n| 6 | `tests/core/metrics/diffTokenCount.test.ts` |\n| 7 | `tests/core/metrics/fastOutputTokenPath.test.ts` |\n| 8 | `tests/core/output/diffsInOutput.test.ts` |\n| 9 | `tests/core/output/flagFullDirectoryStructure.test.ts` |\n| 10 | `tests/core/output/inclusionLevelOutput.test.ts` |\n| 11 | `tests/core/output/outputGenerateDiffs.test.ts` |\n| 12 | `tests/core/output/outputStyles/jsonStyle.test.ts` |\n| 13 | `tests/core/packager/diffsFunctionality.test.ts` |\n| 14 | `tests/core/packager/inclusionLevelSpec.test.ts` |\n| 15 | `tests/core/packager/multiRootSpec.test.ts` |\n| 16 | `tests/core/packager/splitOutput.test.ts` |\n| 17 | `tests/core/security/securityScanSpec.test.ts` |\n| 18 | `tests/integration-tests/packager.test.ts` |\n| 19 | `tests/website/cliCommand.test.ts` |\n| 20 | `tests/website/normalizeJsonSchema.test.ts` |\n\nEn total son **20** archivos de test sin archivo fuente correspondiente (muchos probablemente prueban funcionalidades integradas en otros módulos, o casos como `jsonStyle` donde solo existen `plainStyle.ts`, `markdownStyle.ts` y `xmlStyle.ts`).",
+          "cost_usd": 0.018911,
+          "elapsed_s": 124.7,
+          "failed": false,
+          "turns": 5,
+          "tool_calls": 4,
+          "score": {
+            "f1": 0.421,
+            "precision": 0.348,
+            "recall": 0.533,
+            "tp": 8,
+            "pred_n": 23,
+            "ref_n": 15,
+            "missing": [
+              "cli/actions/defaultAction.buildCliConfig.test.ts",
+              "cli/actions/defaultAction.tokenBudget.test.ts",
+              "cli/actions/defaultAction.tokenCountTree.test.ts",
+              "cli/cliReport.binaryFiles.test.ts",
+              "config/configLoad.integration.test.ts",
+              "core/file/fileProcess.inclusionLevel.test.ts",
+              "core/file/fileSearch.gitignoreSpec.test.ts"
+            ],
+            "extra": [
+              "core/output/flagFullDirectoryStructure.test.ts",
+              "core/output/inclusionLevelOutput.test.ts",
+              "core/output/outputGenerateDiffs.test.ts",
+              "core/output/outputStyles/jsonStyle.test.ts",
+              "core/packager/diffsFunctionality.test.ts",
+              "core/packager/inclusionLevelSpec.test.ts",
+              "core/packager/multiRootSpec.test.ts",
+              "core/packager/splitOutput.test.ts",
+              "core/security/securityScanSpec.test.ts",
+              "integration-tests/packager.test.ts"
+            ]
+          },
+          "f1": 0.421,
+          "response": "Aquí están los archivos de test que **no** tienen un archivo fuente equivalente en `src/`:\n\n| # | Archivo de test |\n|---|-----------------|\n| 1 | `tests/cli/actions/diffsFlag.test.ts` |\n| 2 | `tests/core/file/binaryDetectionSpec.test.ts` |\n| 3 | `tests/core/file/dotIgnoreSpec.test.ts` |\n| 4 | `tests/core/file/emptyDirectorySpec.test.ts` |\n| 5 | `tests/core/file/processOrderSpec.test.ts` |\n| 6 | `tests/core/metrics/diffTokenCount.test.ts` |\n| 7 | `tests/core/metrics/fastOutputTokenPath.test.ts` |\n| 8 | `tests/core/output/diffsInOutput.test.ts` |\n| 9 | `tests/core/output/flagFullDirectoryStructure.test.ts` |\n| 10 | `tests/core/output/inclusionLevelOutput.test.ts` |\n| 11 | `tests/core/output/outputGenerateDiffs.test.ts` |\n| 12 | `tests/core/output/outputStyles/jsonStyle.test.ts` |\n| 13 | `tests/core/packager/diffsFunctionality.test.ts` |\n| 14 | `tests/core/packager/inclusionLevelSpec.test.ts` |\n| 15 | `tests/core/packager/multiRootSpec.test.ts` |\n| 16 | `tests/core/packager/splitOutput.test.ts` |\n| 17 | `tests/core/security/securityScanSpec.test.ts` |\n| 18 | `tests/integration-tests/packager.test.ts` |\n| 19 | `tests/website/cliCommand.test.ts` |\n| 20 | `tests/website/normalizeJsonSche"
+        },
+        "rlm": {
+          "text": "Archivos de test bajo tests/ que NO tienen un archivo fuente correspondiente en src/:\n\n=== Tests sin archivo fuente correspondiente (21 archivos) ===\ntests/cli/actions/diffsFlag.test.ts\ntests/core/file/binaryDetectionSpec.test.ts\ntests/core/file/dotIgnoreSpec.test.ts\ntests/core/file/emptyDirectorySpec.test.ts\ntests/core/file/processOrderSpec.test.ts\ntests/core/metrics/diffTokenCount.test.ts\ntests/core/metrics/fastOutputTokenPath.test.ts\ntests/core/output/diffsInOutput.test.ts\ntests/core/output/flagFullDirectoryStructure.test.ts\ntests/core/output/inclusionLevelOutput.test.ts\ntests/core/output/outputGenerateDiffs.test.ts\ntests/core/output/outputStyles/jsonStyle.test.ts\ntests/core/packager/diffsFunctionality.test.ts\ntests/core/packager/inclusionLevelSpec.test.ts\ntests/core/packager/multiRootSpec.test.ts\ntests/core/packager/splitOutput.test.ts\ntests/core/security/securityScanSpec.test.ts\ntests/core/treeSitter/LanguageParser.test.ts\ntests/integration-tests/packager.test.ts\ntests/website/cliCommand.test.ts\ntests/website/normalizeJsonSchema.test.ts\n\n=== Notas adicionales ===\n- 12 archivos son fixtures/datos de prueba (no tests de código fuente)\n- 2 archivos son utilidades de test (testUtils.ts, vitestSetup.ts)\n- Estos 21 archivos listados arriba son tests reales que no tienen un .ts correspondiente en src/\n\nTotal de archivos bajo tests/ sin correspondencia en src/: 35 (incluyendo fixtures y utilidades)",
+          "cost_usd": 0.12619565,
+          "elapsed_s": 141.8,
+          "failed": false,
+          "turns": null,
+          "tool_calls": null,
+          "score": {
+            "f1": 0.421,
+            "precision": 0.348,
+            "recall": 0.533,
+            "tp": 8,
+            "pred_n": 23,
+            "ref_n": 15,
+            "missing": [
+              "cli/actions/defaultAction.buildCliConfig.test.ts",
+              "cli/actions/defaultAction.tokenBudget.test.ts",
+              "cli/actions/defaultAction.tokenCountTree.test.ts",
+              "cli/cliReport.binaryFiles.test.ts",
+              "config/configLoad.integration.test.ts",
+              "core/file/fileProcess.inclusionLevel.test.ts",
+              "core/file/fileSearch.gitignoreSpec.test.ts"
+            ],
+            "extra": [
+              "core/output/flagFullDirectoryStructure.test.ts",
+              "core/output/inclusionLevelOutput.test.ts",
+              "core/output/outputGenerateDiffs.test.ts",
+              "core/output/outputStyles/jsonStyle.test.ts",
+              "core/packager/diffsFunctionality.test.ts",
+              "core/packager/inclusionLevelSpec.test.ts",
+              "core/packager/multiRootSpec.test.ts",
+              "core/packager/splitOutput.test.ts",
+              "core/security/securityScanSpec.test.ts",
+              "core/treeSitter/LanguageParser.test.ts"
+            ]
+          },
+          "f1": 0.421,
+          "response": "Archivos de test bajo tests/ que NO tienen un archivo fuente correspondiente en src/:\n\n=== Tests sin archivo fuente correspondiente (21 archivos) ===\ntests/cli/actions/diffsFlag.test.ts\ntests/core/file/binaryDetectionSpec.test.ts\ntests/core/file/dotIgnoreSpec.test.ts\ntests/core/file/emptyDirectorySpec.test.ts\ntests/core/file/processOrderSpec.test.ts\ntests/core/metrics/diffTokenCount.test.ts\ntests/core/metrics/fastOutputTokenPath.test.ts\ntests/core/output/diffsInOutput.test.ts\ntests/core/output/flagFullDirectoryStructure.test.ts\ntests/core/output/inclusionLevelOutput.test.ts\ntests/core/output/outputGenerateDiffs.test.ts\ntests/core/output/outputStyles/jsonStyle.test.ts\ntests/core/packager/diffsFunctionality.test.ts\ntests/core/packager/inclusionLevelSpec.test.ts\ntests/core/packager/multiRootSpec.test.ts\ntests/core/packager/splitOutput.test.ts\ntests/core/security/securityScanSpec.test.ts\ntests/core/treeSitter/LanguageParser.test.ts\ntests/integration-tests/packager.test.ts\ntests/website/cliCommand.test.ts\ntests/website/normalizeJsonSchema.test.ts\n\n=== Notas adicionales ===\n- 12 archivos son fixtures/datos de prueba (no tests de código fuente)\n- 2 archivos son utilidades de test (testUti"
+        }
+      }
+    }
+  ],
+  "crossover": {
+    "constant": {
+      "vanilla": 1.0,
+      "pi": 1.0,
+      "rlm": 1.0
+    },
+    "linear": {
+      "vanilla": 0.966,
+      "pi": 0.966,
+      "rlm": 0.966
+    },
+    "quadratic": {
+      "vanilla": 0.0,
+      "pi": 0.704,
+      "rlm": 0.704
+    }
+  }
+}

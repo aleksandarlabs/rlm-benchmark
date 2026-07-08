@@ -1,0 +1,232 @@
+{
+  "timestamp": "2026-07-07T17:43:37.140367",
+  "model": "moonshotai/kimi-k2.6",
+  "tasks": [
+    {
+      "id": "C1",
+      "tier": "constant",
+      "arms": {
+        "vanilla": {
+          "text": "**100**\n\nDefinido en `src/config/configSchema.ts`:\n\n```typescript\nsortByChangesMaxCommits: v.optional(v.pipe(v.number(), v.integer(), v.minValue(1)), 100),\n```",
+          "cost_usd": 0.178288,
+          "elapsed_s": 80.8,
+          "failed": false,
+          "turns": null,
+          "tool_calls": null,
+          "score": {
+            "f1": 1.0,
+            "correct": true
+          },
+          "f1": 1.0,
+          "response": "**100**\n\nDefinido en `src/config/configSchema.ts`:\n\n```typescript\nsortByChangesMaxCommits: v.optional(v.pipe(v.number(), v.integer(), v.minValue(1)), 100),\n```"
+        },
+        "pi": {
+          "text": "El valor por defecto de `output.git.sortByChangesMaxCommits` en el schema es **`100`**.\n\nSe define en:\n\n**`src/config/configSchema.ts`** (línea 128)\n```ts\nsortByChangesMaxCommits: v.optional(v.pipe(v.number(), v.integer(), v.minValue(1)), 100),\n```",
+          "cost_usd": 0.004107,
+          "elapsed_s": 26.5,
+          "failed": false,
+          "turns": 4,
+          "tool_calls": 3,
+          "score": {
+            "f1": 1.0,
+            "correct": true
+          },
+          "f1": 1.0,
+          "response": "El valor por defecto de `output.git.sortByChangesMaxCommits` en el schema es **`100`**.\n\nSe define en:\n\n**`src/config/configSchema.ts`** (línea 128)\n```ts\nsortByChangesMaxCommits: v.optional(v.pipe(v.number(), v.integer(), v.minValue(1)), 100),\n```"
+        },
+        "rlm": {
+          "text": "100",
+          "cost_usd": 0.03404385,
+          "elapsed_s": 39.0,
+          "failed": false,
+          "turns": null,
+          "tool_calls": null,
+          "score": {
+            "f1": 1.0,
+            "correct": true
+          },
+          "f1": 1.0,
+          "response": "100"
+        }
+      }
+    },
+    {
+      "id": "L1",
+      "tier": "linear",
+      "arms": {
+        "vanilla": {
+          "text": "Todos los flags CLI de repomix se definen en **`src/cli/cliRun.ts`** (y se tipan en `src/cli/types.ts`). Agrupados por sección:\n\n**Básicos**\n- `-v, --version`\n\n**CLI Input/Output**\n- `--verbose`\n- `--quiet`\n- `--stdout`\n- `--stdin`\n- `--copy`\n- `--token-count-tree [threshold]`\n- `--top-files-len <number>`\n\n**Repomix Output**\n- `-o, --output <file>`\n- `--style <type>`\n- `--output-file-path-style <style>`\n- `--parsable-style`\n- `--compress`\n- `--output-show-line-numbers`\n- `--no-file-summary`\n- `--no-directory-structure`\n- `--no-files`\n- `--remove-comments`\n- `--remove-empty-lines`\n- `--truncate-base64`\n- `--header-text <text>`\n- `--instruction-file-path <path>`\n- `--split-output <size>`\n- `--include-empty-directories`\n- `--include-full-directory-structure`\n- `--no-git-sort-by-changes`\n- `--include-diffs`\n- `--include-logs`\n- `--include-logs-count <count>`\n\n**File Selection**\n- `--include <patterns>`\n- `-i, --ignore <patterns>`\n- `--no-gitignore`\n- `--no-dot-ignore`\n- `--no-default-patterns`\n\n**Remote Repository**\n- `--remote <url>`\n- `--remote-branch <name>`\n- `--remote-trust-config`\n\n**Configuration**\n- `-c, --config <path>`\n- `--init`\n- `--global`\n\n**Security**\n- `--no-security-check`\n\n**Token Count**\n- `--token-count-encoding <encoding>`\n- `--token-budget <number>`\n\n**MCP**\n- `--mcp`\n\n**Skill Generation**\n- `--skill-generate [name]`\n- `--skill-project-name <name>`\n- `--skill-output <path>`\n- `-f, --force`\n\n**Watch Mode**\n- `-w, --watch`",
+          "cost_usd": 0.1809495,
+          "elapsed_s": 34.1,
+          "failed": false,
+          "turns": null,
+          "tool_calls": null,
+          "score": {
+            "f1": 0.98,
+            "precision": 0.98,
+            "recall": 0.98,
+            "tp": 48,
+            "pred_n": 49,
+            "ref_n": 49,
+            "missing": [
+              "--truncate-base"
+            ],
+            "extra": [
+              "--truncate-base64"
+            ]
+          },
+          "f1": 0.98,
+          "response": "Todos los flags CLI de repomix se definen en **`src/cli/cliRun.ts`** (y se tipan en `src/cli/types.ts`). Agrupados por sección:\n\n**Básicos**\n- `-v, --version`\n\n**CLI Input/Output**\n- `--verbose`\n- `--quiet`\n- `--stdout`\n- `--stdin`\n- `--copy`\n- `--token-count-tree [threshold]`\n- `--top-files-len <number>`\n\n**Repomix Output**\n- `-o, --output <file>`\n- `--style <type>`\n- `--output-file-path-style <style>`\n- `--parsable-style`\n- `--compress`\n- `--output-show-line-numbers`\n- `--no-file-summary`\n- `--no-directory-structure`\n- `--no-files`\n- `--remove-comments`\n- `--remove-empty-lines`\n- `--truncate-base64`\n- `--header-text <text>`\n- `--instruction-file-path <path>`\n- `--split-output <size>`\n- `--include-empty-directories`\n- `--include-full-directory-structure`\n- `--no-git-sort-by-changes`\n- `--include-diffs`\n- `--include-logs`\n- `--include-logs-count <count>`\n\n**File Selection**\n- `--include <patterns>`\n- `-i, --ignore <patterns>`\n- `--no-gitignore`\n- `--no-dot-ignore`\n- `--no-default-patterns`\n\n**Remote Repository**\n- `--remote <url>`\n- `--remote-branch <name>`\n- `--remote-trust-config`\n\n**Configuration**\n- `-c, --config <path>`\n- `--init`\n- `--global`\n\n**Security**\n- `--no-security-ch"
+        },
+        "pi": {
+          "text": "Los flags `--xxx` definidos en el CLI de repomix (49 en total) son:\n\n| # | Flag | Descripción |\n|---|------|-------------|\n| 1 | `--version` | Muestra la versión y sale |\n| 2 | `--verbose` | Activa logs de depuración detallados |\n| 3 | `--quiet` | Suprime toda la salida excepto errores |\n| 4 | `--stdout` | Escribe la salida empaquetada directamente a stdout |\n| 5 | `--stdin` | Lee rutas de archivo desde stdin (una por línea) |\n| 6 | `--copy` | Copia la salida generada al portapapeles del sistema |\n| 7 | `--token-count-tree [threshold]` | Muestra árbol de archivos con conteo de tokens; umbral opcional |\n| 8 | `--top-files-len <number>` | Número de archivos más grandes a mostrar en el resumen |\n| 9 | `--output <file>` | Ruta del archivo de salida (default: `repomix-output.xml`; `-` para stdout) |\n| 10 | `--style <type>` | Formato de salida: `xml`, `markdown`, `json`, `plain` |\n| 11 | `--output-file-path-style <style>` | Estilo de rutas: `target-relative` o `cwd-relative` |\n| 12 | `--parsable-style` | Escapa caracteres especiales para XML/Markdown válido |\n| 13 | `--compress` | Extrae estructura esencial (clases, funciones, interfaces) vía Tree-sitter |\n| 14 | `--output-show-line-numbers` | Prefija cada línea con su número de línea |\n| 15 | `--no-file-summary` | Omite la sección de resumen de archivo |\n| 16 | `--no-directory-structure` | Omite la visualización del árbol de directorios |\n| 17 | `--no-files` | Genera solo metadata sin contenido de archivos |\n| 18 | `--remove-comments` | Elimina todos los comentarios de código |\n| 19 | `--remove-empty-lines` | Elimina líneas en blanco de todos los archivos |\n| 20 | `--truncate-base64` | Trunca cadenas base64 largas |\n| 21 | `--header-text <text>` | Texto personalizado al inicio de la salida |\n| 22 | `--instruction-file-path <path>` | Ruta a archivo con instrucciones personalizadas |\n| 23 | `--split-output <size>` | Divide la salida en archivos numerados (ej. `500kb`, `2mb`) |\n| 24 | `--include-empty-directories` | Incluye carpetas vacías en la estructura de directorios |\n| 25 | `--include-full-directory-structure` | Muestra el árbol completo aunque se use `--include` |\n| 26 | `--no-git-sort-by-changes` | No ordena archivos por frecuencia de cambios git |\n| 27 | `--include-diffs` | Incluye sección de git diff (working tree y staged) |\n| 28 | `--include-logs` | Incluye historial de commits de git |\n| 29 | `--include-logs-count <count>` | Número de commits recientes a incluir con `--include-logs` |\n| 30 | `--include <patterns>` | Incluye solo archivos que coincidan con patrones glob |\n| 31 | `--ignore <patterns>` | Patrones adicionales para excluir |\n| 32 | `--no-gitignore` | No usa reglas `.gitignore` |\n| 33 | `--no-dot-ignore` | No usa reglas `.ignore` |\n| 34 | `--no-default-patterns` | No aplica patrones built-in de exclusión |\n| 35 | `--remote <url>` | Clona y empaqueta un repositorio remoto |\n| 36 | `--remote-branch <name>` | Rama, tag o commit específico del remoto |\n| 37 | `--remote-trust-config` | Confía y carga configs del repositorio remoto |\n| 38 | `--config <path>` | Usa un archivo de configuración personalizado |\n| 39 | `--init` | Crea un `repomix.config.json` con valores por defecto |\n| 40 | `--global` | Con `--init`, crea la config en el directorio home |\n| 41 | `--no-security-check` | Omite escaneo de datos sensibles (API keys, contraseñas) |\n| 42 | `--token-count-encoding <encoding>` | Modelo de tokenización (ej. `o200k_base`, `cl100k_base`) |\n| 43 | `--token-budget <number>` | Falla si la salida supera N tokens |\n| 44 | `--mcp` | Ejecuta como servidor MCP (Model Context Protocol) |\n| 45 | `--skill-generate [name]` | Genera salida en formato Claude Agent Skills |\n| 46 | `--skill-project-name <name>` | Sobreescribe el nombre de proyecto en Skills |\n| 47 | `--skill-output <path>` | Ruta de salida para el skill (omite prompt) |\n| 48 | `--force` | Salta todos los prompts de confirmación |\n| 49 | `--watch` | Observa cambios de archivos y Re-empaqueta automáticamente |\n\n**Fuente:** `src/cli/cliRun.ts` (allí se registran todas las opciones con `commander`).",
+          "cost_usd": 0.019418,
+          "elapsed_s": 58.2,
+          "failed": false,
+          "turns": 5,
+          "tool_calls": 7,
+          "score": {
+            "f1": 0.97,
+            "precision": 0.96,
+            "recall": 0.98,
+            "tp": 48,
+            "pred_n": 50,
+            "ref_n": 49,
+            "missing": [
+              "--truncate-base"
+            ],
+            "extra": [
+              "--truncate-base64",
+              "--xxx"
+            ]
+          },
+          "f1": 0.97,
+          "response": "Los flags `--xxx` definidos en el CLI de repomix (49 en total) son:\n\n| # | Flag | Descripción |\n|---|------|-------------|\n| 1 | `--version` | Muestra la versión y sale |\n| 2 | `--verbose` | Activa logs de depuración detallados |\n| 3 | `--quiet` | Suprime toda la salida excepto errores |\n| 4 | `--stdout` | Escribe la salida empaquetada directamente a stdout |\n| 5 | `--stdin` | Lee rutas de archivo desde stdin (una por línea) |\n| 6 | `--copy` | Copia la salida generada al portapapeles del sistema |\n| 7 | `--token-count-tree [threshold]` | Muestra árbol de archivos con conteo de tokens; umbral opcional |\n| 8 | `--top-files-len <number>` | Número de archivos más grandes a mostrar en el resumen |\n| 9 | `--output <file>` | Ruta del archivo de salida (default: `repomix-output.xml`; `-` para stdout) |\n| 10 | `--style <type>` | Formato de salida: `xml`, `markdown`, `json`, `plain` |\n| 11 | `--output-file-path-style <style>` | Estilo de rutas: `target-relative` o `cwd-relative` |\n| 12 | `--parsable-style` | Escapa caracteres especiales para XML/Markdown válido |\n| 13 | `--compress` | Extrae estructura esencial (clases, funciones, interfaces) vía Tree-sitter |\n| 14 | `--output-show-line-numb"
+        },
+        "rlm": {
+          "text": "# TODOS los flags de línea de comandos (--xxx) del CLI de Repomix\n\n## Opciones Básicas\n1. `-v, --version` — Muestra la versión y sale\n\n## Opciones de Entrada/Salida CLI\n2. `--verbose` — Activa logging detallado de debug\n3. `--quiet` — Suprime toda salida excepto errores\n4. `--stdout` — Escribe salida a stdout en vez de archivo\n5. `--stdin` — Lee rutas de archivos desde stdin (una por línea)\n6. `--copy` — Copia la salida al portapapeles del sistema\n7. `--token-count-tree [threshold]` — Muestra árbol de archivos con conteo de tokens; umbral opcional\n8. `--top-files-len <number>` — Número de archivos más grandes en el resumen (default: 5)\n\n## Opciones de Salida Repomix\n9. `-o, --output <file>` — Ruta del archivo de salida (default: repomix-output.xml, \"-\" para stdout)\n10. `--style <style>` — Formato: xml, markdown, json, plain (default: xml)\n11. `--output-file-path-style <style>` — Estilo de rutas: target-relative o cwd-relative\n12. `--parsable-style` — Escapa caracteres especiales para XML/Markdown válido\n13. `--compress` — Extrae estructura esencial de código con Tree-sitter\n14. `--output-show-line-numbers` — Prefija cada línea con su número\n15. `--no-file-summary` — Omite la sección de resumen de archivos\n16. `--no-directory-structure` — Omite el árbol de directorios\n17. `--no-files` — Solo metadatos, sin contenidos de archivos\n18. `--remove-comments` — Elimina comentarios de código\n19. `--remove-empty-lines` — Elimina líneas en blanco\n20. `--truncate-base64` — Trunca cadenas base64 largas\n21. `--header-text <text>` — Texto personalizado al inicio de la salida\n22. `--instruction-file-path <path>` — Ruta a archivo con instrucciones personalizadas\n23. `--split-output <size>` — Divide salida en archivos numerados (ej. 500kb, 2mb)\n24. `--include-empty-directories` — Incluye carpetas vacías en el árbol\n25. `--include-full-directory-structure` — Muestra árbol completo aunque se use --include\n26. `--no-git-sort-by-changes` — No ordena por frecuencia de cambios git\n27. `--include-diffs` — Añade sección git diff (working tree y staged)\n28. `--include-logs` — Añade historial de commits git\n29. `--include-logs-count <count>` — Número de commits recientes (default: 50)\n\n## Opciones de Selección de Archivos\n30. `--include <patterns>` — Incluye solo archivos que coincidan con patrones glob\n31. `-i, --ignore <patterns>` — Patrones adicionales para excluir\n32. `--no-gitignore` — No usa .gitignore\n33. `--no-dot-ignore` — No usa .ignore\n34. `--no-default-patterns` — No aplica patrones built-in (node_modules, .git, etc.)\n\n## Opciones de Repositorio Remoto\n35. `--remote <url>` — Clona y empaqueta repositorio remoto\n36. `--remote-branch <name>` — Rama, tag o commit específico\n37. `--remote-trust-config` — Confía archivos de config del repo remoto\n\n## Opciones de Configuración\n38. `-c, --config <path>` — Archivo de config personalizado\n39. `--init` — Crea repomix.config.json con defaults\n40. `--global` — Con --init, crea config en el directorio home\n\n## Opciones de Seguridad\n41. `--no-security-check` — Omite escaneo de datos sensibles\n\n## Opciones de Conteo de Tokens\n42. `--token-count-encoding <encoding>` — Modelo tokenizador (default: o200k_base)\n43. `--token-budget <number>` — Falla si la salida excede N tokens\n\n## Opciones MCP\n44. `--mcp` — Ejecuta como servidor Model Context Protocol\n\n## Opciones de Generación de Skills (Experimental)\n45. `--skill-generate [name]` — Genera salida en formato Claude Agent Skills\n46. `--skill-project-name <name>` — Sobrescribe nombre del proyecto\n47. `--skill-output <path>` — Ruta de salida del skill (sin prompt)\n48. `-f, --force` — Omite prompts de confirmación\n\n## Opciones de Modo Watch\n49. `-w, --watch` — Observa cambios y re-empaqueta automáticamente\n\n---\nTotal: 49 flags de línea de comandos documentados.",
+          "cost_usd": 0.26742975,
+          "elapsed_s": 199.8,
+          "failed": false,
+          "turns": null,
+          "tool_calls": null,
+          "score": {
+            "f1": 0.97,
+            "precision": 0.96,
+            "recall": 0.98,
+            "tp": 48,
+            "pred_n": 50,
+            "ref_n": 49,
+            "missing": [
+              "--truncate-base"
+            ],
+            "extra": [
+              "--truncate-base64",
+              "--xxx"
+            ]
+          },
+          "f1": 0.97,
+          "response": "# TODOS los flags de línea de comandos (--xxx) del CLI de Repomix\n\n## Opciones Básicas\n1. `-v, --version` — Muestra la versión y sale\n\n## Opciones de Entrada/Salida CLI\n2. `--verbose` — Activa logging detallado de debug\n3. `--quiet` — Suprime toda salida excepto errores\n4. `--stdout` — Escribe salida a stdout en vez de archivo\n5. `--stdin` — Lee rutas de archivos desde stdin (una por línea)\n6. `--copy` — Copia la salida al portapapeles del sistema\n7. `--token-count-tree [threshold]` — Muestra árbol de archivos con conteo de tokens; umbral opcional\n8. `--top-files-len <number>` — Número de archivos más grandes en el resumen (default: 5)\n\n## Opciones de Salida Repomix\n9. `-o, --output <file>` — Ruta del archivo de salida (default: repomix-output.xml, \"-\" para stdout)\n10. `--style <style>` — Formato: xml, markdown, json, plain (default: xml)\n11. `--output-file-path-style <style>` — Estilo de rutas: target-relative o cwd-relative\n12. `--parsable-style` — Escapa caracteres especiales para XML/Markdown válido\n13. `--compress` — Extrae estructura esencial de código con Tree-sitter\n14. `--output-show-line-numbers` — Prefija cada línea con su número\n15. `--no-file-summary` — Omite la secció"
+        }
+      }
+    },
+    {
+      "id": "Q1",
+      "tier": "quadratic",
+      "arms": {
+        "vanilla": {
+          "text": "El contexto proporcionado **no incluye la carpeta `tests/`** (solo se menciona en la documentación, pero sus archivos no aparecen en el listado), por lo que no puedo comparar directamente qué archivos de `src/` carecen de test correspondiente.\n\nSi tienes acceso al repositorio completo, puedo analizarlo si ejecutas:\n\n```bash\nnpx repomix@latest --include \"src/**/*.ts,tests/**/*.test.ts\" --output /tmp/repomix-tests.xml\n```\n\nY compartes el resultado, o si me indicas que explore el repo con el agente `repomix-explorer`.",
+          "cost_usd": 0.18637615,
+          "elapsed_s": 71.4,
+          "failed": false,
+          "turns": null,
+          "tool_calls": null,
+          "score": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "tp": 0,
+            "pred_n": 1,
+            "ref_n": 40,
+            "missing": [
+              "cli/types.ts",
+              "config/defaultIgnore.ts",
+              "core/file/fileTypes.ts",
+              "core/file/workers/fileProcessWorker.ts",
+              "core/git/gitRemoteUrl.ts",
+              "core/metrics/metricsWorkerRunner.ts",
+              "core/metrics/tokenCounterFactory.ts",
+              "core/metrics/tokenEncodings.ts",
+              "core/metrics/workers/types.ts",
+              "core/output/outputGeneratorTypes.ts"
+            ],
+            "extra": [
+              "test.ts"
+            ]
+          },
+          "f1": 0.0,
+          "response": "El contexto proporcionado **no incluye la carpeta `tests/`** (solo se menciona en la documentación, pero sus archivos no aparecen en el listado), por lo que no puedo comparar directamente qué archivos de `src/` carecen de test correspondiente.\n\nSi tienes acceso al repositorio completo, puedo analizarlo si ejecutas:\n\n```bash\nnpx repomix@latest --include \"src/**/*.ts,tests/**/*.test.ts\" --output /tmp/repomix-tests.xml\n```\n\nY compartes el resultado, o si me indicas que explore el repo con el agente `repomix-explorer`."
+        },
+        "pi": {
+          "text": "Aquí están los archivos `.ts` bajo `src/` que **no** tienen un archivo de test correspondiente en `tests/`:\n\n```\nsrc/cli/types.ts\nsrc/config/defaultIgnore.ts\nsrc/core/file/fileTypes.ts\nsrc/core/file/workers/fileProcessWorker.ts\nsrc/core/git/gitRemoteUrl.ts\nsrc/core/metrics/metricsWorkerRunner.ts\nsrc/core/metrics/tokenCounterFactory.ts\nsrc/core/metrics/tokenEncodings.ts\nsrc/core/metrics/workers/types.ts\nsrc/core/output/outputGeneratorTypes.ts\nsrc/core/output/outputStyleUtils.ts\nsrc/core/security/workers/secretlint.d.ts\nsrc/core/tokenCount/types.ts\nsrc/core/treeSitter/languageConfig.ts\nsrc/core/treeSitter/parseStrategies/BaseParseStrategy.ts\nsrc/core/treeSitter/parseStrategies/CssParseStrategy.ts\nsrc/core/treeSitter/parseStrategies/DefaultParseStrategy.ts\nsrc/core/treeSitter/parseStrategies/GoParseStrategy.ts\nsrc/core/treeSitter/parseStrategies/PythonParseStrategy.ts\nsrc/core/treeSitter/parseStrategies/TypeScriptParseStrategy.ts\nsrc/core/treeSitter/parseStrategies/VueParseStrategy.ts\nsrc/core/treeSitter/queries/queryC.ts\nsrc/core/treeSitter/queries/queryCpp.ts\nsrc/core/treeSitter/queries/queryCSharp.ts\nsrc/core/treeSitter/queries/queryCss.ts\nsrc/core/treeSitter/queries/queryDart.ts\nsrc/core/treeSitter/queries/queryGo.ts\nsrc/core/treeSitter/queries/queryJava.ts\nsrc/core/treeSitter/queries/queryJavascript.ts\nsrc/core/treeSitter/queries/queryPhp.ts\nsrc/core/treeSitter/queries/queryPython.ts\nsrc/core/treeSitter/queries/queryRuby.ts\nsrc/core/treeSitter/queries/queryRust.ts\nsrc/core/treeSitter/queries/querySolidity.ts\nsrc/core/treeSitter/queries/querySwift.ts\nsrc/core/treeSitter/queries/queryTypescript.ts\nsrc/core/treeSitter/queries/queryVue.ts\nsrc/index.ts\nsrc/shared/constants.ts\nsrc/shared/types.ts\nsrc/types/git-url-parse.d.ts\n```\n\n> **Nota:** Dos de los archivos listados son archivos de declaración (`.d.ts`): `src/core/security/workers/secretlint.d.ts` y `src/types/git-url-parse.d.ts`. El resto son módulos `.ts` propiamente dichos.",
+          "cost_usd": 0.021452,
+          "elapsed_s": 81.3,
+          "failed": false,
+          "turns": 6,
+          "tool_calls": 6,
+          "score": {
+            "f1": 0.987,
+            "precision": 1.0,
+            "recall": 0.975,
+            "tp": 39,
+            "pred_n": 39,
+            "ref_n": 40,
+            "missing": [
+              "core/treeSitter/languageParser.ts"
+            ],
+            "extra": []
+          },
+          "f1": 0.987,
+          "response": "Aquí están los archivos `.ts` bajo `src/` que **no** tienen un archivo de test correspondiente en `tests/`:\n\n```\nsrc/cli/types.ts\nsrc/config/defaultIgnore.ts\nsrc/core/file/fileTypes.ts\nsrc/core/file/workers/fileProcessWorker.ts\nsrc/core/git/gitRemoteUrl.ts\nsrc/core/metrics/metricsWorkerRunner.ts\nsrc/core/metrics/tokenCounterFactory.ts\nsrc/core/metrics/tokenEncodings.ts\nsrc/core/metrics/workers/types.ts\nsrc/core/output/outputGeneratorTypes.ts\nsrc/core/output/outputStyleUtils.ts\nsrc/core/security/workers/secretlint.d.ts\nsrc/core/tokenCount/types.ts\nsrc/core/treeSitter/languageConfig.ts\nsrc/core/treeSitter/parseStrategies/BaseParseStrategy.ts\nsrc/core/treeSitter/parseStrategies/CssParseStrategy.ts\nsrc/core/treeSitter/parseStrategies/DefaultParseStrategy.ts\nsrc/core/treeSitter/parseStrategies/GoParseStrategy.ts\nsrc/core/treeSitter/parseStrategies/PythonParseStrategy.ts\nsrc/core/treeSitter/parseStrategies/TypeScriptParseStrategy.ts\nsrc/core/treeSitter/parseStrategies/VueParseStrategy.ts\nsrc/core/treeSitter/queries/queryC.ts\nsrc/core/treeSitter/queries/queryCpp.ts\nsrc/core/treeSitter/queries/queryCSharp.ts\nsrc/core/treeSitter/queries/queryCss.ts\nsrc/core/treeSitter/queries/queryDart.ts\ns"
+        },
+        "rlm": {
+          "text": "cli/types.ts\nconfig/defaultIgnore.ts\ncore/file/fileTypes.ts\ncore/file/workers/fileProcessWorker.ts\ncore/git/gitRemoteUrl.ts\ncore/metrics/metricsWorkerRunner.ts\ncore/metrics/tokenCounterFactory.ts\ncore/metrics/tokenEncodings.ts\ncore/metrics/workers/types.ts\ncore/output/outputGeneratorTypes.ts\ncore/output/outputStyleUtils.ts\ncore/security/workers/secretlint.d.ts\ncore/tokenCount/types.ts\ncore/treeSitter/languageConfig.ts\ncore/treeSitter/languageParser.ts\ncore/treeSitter/parseStrategies/BaseParseStrategy.ts\ncore/treeSitter/parseStrategies/CssParseStrategy.ts\ncore/treeSitter/parseStrategies/DefaultParseStrategy.ts\ncore/treeSitter/parseStrategies/GoParseStrategy.ts\ncore/treeSitter/parseStrategies/PythonParseStrategy.ts\ncore/treeSitter/parseStrategies/TypeScriptParseStrategy.ts\ncore/treeSitter/parseStrategies/VueParseStrategy.ts\ncore/treeSitter/queries/queryC.ts\ncore/treeSitter/queries/queryCSharp.ts\ncore/treeSitter/queries/queryCpp.ts\ncore/treeSitter/queries/queryCss.ts\ncore/treeSitter/queries/queryDart.ts\ncore/treeSitter/queries/queryGo.ts\ncore/treeSitter/queries/queryJava.ts\ncore/treeSitter/queries/queryJavascript.ts\ncore/treeSitter/queries/queryPhp.ts\ncore/treeSitter/queries/queryPython.ts\ncore/treeSitter/queries/queryRuby.ts\ncore/treeSitter/queries/queryRust.ts\ncore/treeSitter/queries/querySolidity.ts\ncore/treeSitter/queries/querySwift.ts\ncore/treeSitter/queries/queryTypescript.ts\ncore/treeSitter/queries/queryVue.ts\nindex.ts\nshared/constants.ts\nshared/types.ts\ntypes/git-url-parse.d.ts",
+          "cost_usd": 0.00592555,
+          "elapsed_s": 287.4,
+          "failed": false,
+          "turns": null,
+          "tool_calls": null,
+          "score": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "tp": 40,
+            "pred_n": 40,
+            "ref_n": 40,
+            "missing": [],
+            "extra": []
+          },
+          "f1": 1.0,
+          "response": "cli/types.ts\nconfig/defaultIgnore.ts\ncore/file/fileTypes.ts\ncore/file/workers/fileProcessWorker.ts\ncore/git/gitRemoteUrl.ts\ncore/metrics/metricsWorkerRunner.ts\ncore/metrics/tokenCounterFactory.ts\ncore/metrics/tokenEncodings.ts\ncore/metrics/workers/types.ts\ncore/output/outputGeneratorTypes.ts\ncore/output/outputStyleUtils.ts\ncore/security/workers/secretlint.d.ts\ncore/tokenCount/types.ts\ncore/treeSitter/languageConfig.ts\ncore/treeSitter/languageParser.ts\ncore/treeSitter/parseStrategies/BaseParseStrategy.ts\ncore/treeSitter/parseStrategies/CssParseStrategy.ts\ncore/treeSitter/parseStrategies/DefaultParseStrategy.ts\ncore/treeSitter/parseStrategies/GoParseStrategy.ts\ncore/treeSitter/parseStrategies/PythonParseStrategy.ts\ncore/treeSitter/parseStrategies/TypeScriptParseStrategy.ts\ncore/treeSitter/parseStrategies/VueParseStrategy.ts\ncore/treeSitter/queries/queryC.ts\ncore/treeSitter/queries/queryCSharp.ts\ncore/treeSitter/queries/queryCpp.ts\ncore/treeSitter/queries/queryCss.ts\ncore/treeSitter/queries/queryDart.ts\ncore/treeSitter/queries/queryGo.ts\ncore/treeSitter/queries/queryJava.ts\ncore/treeSitter/queries/queryJavascript.ts\ncore/treeSitter/queries/queryPhp.ts\ncore/treeSitter/queries/queryPyth"
+        }
+      }
+    }
+  ],
+  "crossover": {
+    "constant": {
+      "vanilla": 1.0,
+      "pi": 1.0,
+      "rlm": 1.0
+    },
+    "linear": {
+      "vanilla": 0.98,
+      "pi": 0.97,
+      "rlm": 0.97
+    },
+    "quadratic": {
+      "vanilla": 0.0,
+      "pi": 0.987,
+      "rlm": 1.0
+    }
+  }
+}

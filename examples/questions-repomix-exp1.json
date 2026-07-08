@@ -1,0 +1,76 @@
+{
+  "needles": [
+    {
+      "id": "n01-default-style",
+      "question": "En repomix, ¿cuál es el estilo de salida (output.style) por defecto en el schema de configuración?",
+      "accept": ["xml"],
+      "source": "src/config/configSchema.ts:105"
+    },
+    {
+      "id": "n02-default-encoding",
+      "question": "¿Cuál es el token encoding por defecto en la configuración de repomix (tokenCount.encoding)?",
+      "accept": ["o200k_base"],
+      "source": "src/config/configSchema.ts:145"
+    },
+    {
+      "id": "n03-tokenizer-lib",
+      "question": "¿Qué librería usa repomix para contar tokens en TokenCounter?",
+      "accept": ["gpt-tokenizer"],
+      "source": "src/core/metrics/TokenCounter.ts:1"
+    },
+    {
+      "id": "n04-topfiles",
+      "question": "¿Cuál es el valor por defecto de output.topFilesLength en el schema de configuración?",
+      "accept": ["5"],
+      "source": "src/config/configSchema.ts:116"
+    },
+    {
+      "id": "n05-maxfilesize",
+      "question": "¿Cuál es el valor por defecto de input.maxFileSize en bytes (o en MB)?",
+      "accept": ["52428800", "50 * 1024 * 1024", "50mb", "50 mb"],
+      "source": "src/config/configSchema.ts:101"
+    },
+    {
+      "id": "n06-validation-lib",
+      "question": "¿Qué librería de validación de esquemas usa repomix para definir y parsear su configuración?",
+      "accept": ["valibot"],
+      "source": "src/config/configSchema.ts"
+    },
+    {
+      "id": "n07-cli-framework",
+      "question": "¿Qué librería usa repomix para parsear los argumentos de la línea de comandos (el CLI)?",
+      "accept": ["commander"],
+      "source": "src/cli/cliRun.ts:4"
+    },
+    {
+      "id": "n08-worker-pool",
+      "question": "¿Qué librería usa repomix para el pool de workers/threads en el procesamiento concurrente?",
+      "accept": ["tinypool"],
+      "source": "src/shared/processConcurrency.ts:2"
+    },
+    {
+      "id": "n09-sortbychanges-max",
+      "question": "¿Cuál es el valor por defecto de output.git.sortByChangesMaxCommits?",
+      "accept": ["100"],
+      "source": "src/config/configSchema.ts:128"
+    },
+    {
+      "id": "n10-default-xml-filepath",
+      "question": "¿Cuál es el nombre de archivo de salida por defecto cuando el estilo es xml?",
+      "accept": ["repomix-output.xml"],
+      "source": "src/config/configSchema.ts:14"
+    }
+  ],
+  "synthesis": [
+    {
+      "id": "s01-architecture",
+      "question": "Describe la arquitectura de alto nivel de repomix: ¿cuál es el pipeline principal desde que se invoca hasta que se produce el archivo de salida? Menciona los módulos/directorios clave (config, core/file, core/metrics, output) y qué hace cada uno.",
+      "rubric": "Debe identificar: (1) entrada por CLI (commander) -> defaultAction; (2) carga de config (config/configLoad, valibot schema); (3) recolección de archivos (core/file: fileSearch con globby, fileCollect, fileProcess); (4) conteo de métricas/tokens (core/metrics, gpt-tokenizer); (5) generación de salida en estilos xml/markdown/json/plain (core/output). Puntúa 0-10 por cobertura y exactitud de los módulos reales."
+    },
+    {
+      "id": "s02-mcp",
+      "question": "repomix expone un servidor MCP. ¿Qué hace ese servidor y qué tipo de herramientas (tools) ofrece a un cliente MCP?",
+      "rubric": "Debe identificar que src/mcp/mcpServer.ts registra un servidor MCP (usando @modelcontextprotocol/sdk) que expone tools para empaquetar repos (locales y remotos) y leer/grep el output empaquetado, para que un LLM consuma el codebase. Puntúa 0-10 por exactitud."
+    }
+  ]
+}

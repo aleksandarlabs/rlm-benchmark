@@ -1,0 +1,82 @@
+{
+  "timestamp": "2026-07-07T18:21:47.755912",
+  "model": "moonshotai/kimi-k2.6",
+  "tasks": [
+    {
+      "id": "Q1",
+      "tier": "quadratic",
+      "arms": {
+        "pi": {
+          "text": "Archivos `.ts` bajo `src/` **sin** archivo de test correspondiente en `tests/`:\n\n```\ncli/types.ts\nconfig/defaultIgnore.ts\ncore/file/fileTypes.ts\ncore/file/workers/fileProcessWorker.ts\ncore/git/gitRemoteUrl.ts\ncore/metrics/metricsWorkerRunner.ts\ncore/metrics/tokenCounterFactory.ts\ncore/metrics/tokenEncodings.ts\ncore/metrics/workers/types.ts\ncore/output/outputGeneratorTypes.ts\ncore/output/outputStyleUtils.ts\ncore/security/workers/secretlint.d.ts\ncore/tokenCount/types.ts\ncore/treeSitter/languageConfig.ts\ncore/treeSitter/languageParser.ts\ncore/treeSitter/parseStrategies/BaseParseStrategy.ts\ncore/treeSitter/parseStrategies/CssParseStrategy.ts\ncore/treeSitter/parseStrategies/DefaultParseStrategy.ts\ncore/treeSitter/parseStrategies/GoParseStrategy.ts\ncore/treeSitter/parseStrategies/PythonParseStrategy.ts\ncore/treeSitter/parseStrategies/TypeScriptParseStrategy.ts\ncore/treeSitter/parseStrategies/VueParseStrategy.ts\ncore/treeSitter/queries/queryC.ts\ncore/treeSitter/queries/queryCSharp.ts\ncore/treeSitter/queries/queryCpp.ts\ncore/treeSitter/queries/queryCss.ts\ncore/treeSitter/queries/queryDart.ts\ncore/treeSitter/queries/queryGo.ts\ncore/treeSitter/queries/queryJava.ts\ncore/treeSitter/queries/queryJavascript.ts\ncore/treeSitter/queries/queryPhp.ts\ncore/treeSitter/queries/queryPython.ts\ncore/treeSitter/queries/queryRuby.ts\ncore/treeSitter/queries/queryRust.ts\ncore/treeSitter/queries/querySolidity.ts\ncore/treeSitter/queries/querySwift.ts\ncore/treeSitter/queries/queryTypescript.ts\ncore/treeSitter/queries/queryVue.ts\nindex.ts\nshared/constants.ts\nshared/types.ts\ntypes/git-url-parse.d.ts\n```",
+          "cost_usd": 0.017501,
+          "elapsed_s": 189.1,
+          "failed": false,
+          "turns": 3,
+          "tool_calls": 3,
+          "score": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "tp": 40,
+            "pred_n": 40,
+            "ref_n": 40,
+            "missing": [],
+            "extra": []
+          },
+          "f1": 1.0,
+          "response": "Archivos `.ts` bajo `src/` **sin** archivo de test correspondiente en `tests/`:\n\n```\ncli/types.ts\nconfig/defaultIgnore.ts\ncore/file/fileTypes.ts\ncore/file/workers/fileProcessWorker.ts\ncore/git/gitRemoteUrl.ts\ncore/metrics/metricsWorkerRunner.ts\ncore/metrics/tokenCounterFactory.ts\ncore/metrics/tokenEncodings.ts\ncore/metrics/workers/types.ts\ncore/output/outputGeneratorTypes.ts\ncore/output/outputStyleUtils.ts\ncore/security/workers/secretlint.d.ts\ncore/tokenCount/types.ts\ncore/treeSitter/languageConfig.ts\ncore/treeSitter/languageParser.ts\ncore/treeSitter/parseStrategies/BaseParseStrategy.ts\ncore/treeSitter/parseStrategies/CssParseStrategy.ts\ncore/treeSitter/parseStrategies/DefaultParseStrategy.ts\ncore/treeSitter/parseStrategies/GoParseStrategy.ts\ncore/treeSitter/parseStrategies/PythonParseStrategy.ts\ncore/treeSitter/parseStrategies/TypeScriptParseStrategy.ts\ncore/treeSitter/parseStrategies/VueParseStrategy.ts\ncore/treeSitter/queries/queryC.ts\ncore/treeSitter/queries/queryCSharp.ts\ncore/treeSitter/queries/queryCpp.ts\ncore/treeSitter/queries/queryCss.ts\ncore/treeSitter/queries/queryDart.ts\ncore/treeSitter/queries/queryGo.ts\ncore/treeSitter/queries/queryJava.ts\ncore/treeSitter/queries/que"
+        }
+      }
+    },
+    {
+      "id": "Q2",
+      "tier": "quadratic",
+      "arms": {
+        "pi": {
+          "text": "He revisado todos los archivos `.test.ts` bajo `tests/` y comparé sus rutas (quitando el sufijo `.test.ts` y segmentos de sub‑prueba separados por puntos) con los archivos `.ts` que existen bajo `src/`.  \n\nEstos **20 archivos de test** no tienen un archivo fuente correspondiente con la misma ruta en `src/`:\n\n| # | Archivo de test |\n|---|-----------------|\n| 1 | `tests/cli/actions/diffsFlag.test.ts` |\n| 2 | `tests/core/file/binaryDetectionSpec.test.ts` |\n| 3 | `tests/core/file/dotIgnoreSpec.test.ts` |\n| 4 | `tests/core/file/emptyDirectorySpec.test.ts` |\n| 5 | `tests/core/file/processOrderSpec.test.ts` |\n| 6 | `tests/core/metrics/diffTokenCount.test.ts` |\n| 7 | `tests/core/metrics/fastOutputTokenPath.test.ts` |\n| 8 | `tests/core/output/diffsInOutput.test.ts` |\n| 9 | `tests/core/output/flagFullDirectoryStructure.test.ts` |\n| 10 | `tests/core/output/inclusionLevelOutput.test.ts` |\n| 11 | `tests/core/output/outputGenerateDiffs.test.ts` |\n| 12 | `tests/core/output/outputStyles/jsonStyle.test.ts` |\n| 13 | `tests/core/packager/diffsFunctionality.test.ts` |\n| 14 | `tests/core/packager/inclusionLevelSpec.test.ts` |\n| 15 | `tests/core/packager/multiRootSpec.test.ts` |\n| 16 | `tests/core/packager/splitOutput.test.ts` |\n| 17 | `tests/core/security/securityScanSpec.test.ts` |\n| 18 | `tests/integration-tests/packager.test.ts` |\n| 19 | `tests/website/cliCommand.test.ts` |\n| 20 | `tests/website/normalizeJsonSchema.test.ts` |\n\nLa mayoría son *specs* o tests de comportamiento que prueban funcionalidades distribuidas en varios archivos fuente (por ejemplo `binaryDetectionSpec` comprueba `fileCollect` / `fileRead`, y `multiRootSpec` prueba `packager.ts` como integración). Los dos últimos (`website/…` e `integration-tests/…`) prueban código que no reside bajo `src/` sino en otras carpetas del repo.",
+          "cost_usd": 0.098767,
+          "elapsed_s": 609.6,
+          "failed": false,
+          "turns": 16,
+          "tool_calls": 16,
+          "score": {
+            "f1": 0.432,
+            "precision": 0.364,
+            "recall": 0.533,
+            "tp": 8,
+            "pred_n": 22,
+            "ref_n": 15,
+            "missing": [
+              "cli/actions/defaultAction.buildCliConfig.test.ts",
+              "cli/actions/defaultAction.tokenBudget.test.ts",
+              "cli/actions/defaultAction.tokenCountTree.test.ts",
+              "cli/cliReport.binaryFiles.test.ts",
+              "config/configLoad.integration.test.ts",
+              "core/file/fileProcess.inclusionLevel.test.ts",
+              "core/file/fileSearch.gitignoreSpec.test.ts"
+            ],
+            "extra": [
+              "core/output/flagFullDirectoryStructure.test.ts",
+              "core/output/inclusionLevelOutput.test.ts",
+              "core/output/outputGenerateDiffs.test.ts",
+              "core/output/outputStyles/jsonStyle.test.ts",
+              "core/packager/diffsFunctionality.test.ts",
+              "core/packager/inclusionLevelSpec.test.ts",
+              "core/packager/multiRootSpec.test.ts",
+              "core/packager/splitOutput.test.ts",
+              "core/security/securityScanSpec.test.ts",
+              "integration-tests/packager.test.ts"
+            ]
+          },
+          "f1": 0.432,
+          "response": "He revisado todos los archivos `.test.ts` bajo `tests/` y comparé sus rutas (quitando el sufijo `.test.ts` y segmentos de sub‑prueba separados por puntos) con los archivos `.ts` que existen bajo `src/`.  \n\nEstos **20 archivos de test** no tienen un archivo fuente correspondiente con la misma ruta en `src/`:\n\n| # | Archivo de test |\n|---|-----------------|\n| 1 | `tests/cli/actions/diffsFlag.test.ts` |\n| 2 | `tests/core/file/binaryDetectionSpec.test.ts` |\n| 3 | `tests/core/file/dotIgnoreSpec.test.ts` |\n| 4 | `tests/core/file/emptyDirectorySpec.test.ts` |\n| 5 | `tests/core/file/processOrderSpec.test.ts` |\n| 6 | `tests/core/metrics/diffTokenCount.test.ts` |\n| 7 | `tests/core/metrics/fastOutputTokenPath.test.ts` |\n| 8 | `tests/core/output/diffsInOutput.test.ts` |\n| 9 | `tests/core/output/flagFullDirectoryStructure.test.ts` |\n| 10 | `tests/core/output/inclusionLevelOutput.test.ts` |\n| 11 | `tests/core/output/outputGenerateDiffs.test.ts` |\n| 12 | `tests/core/output/outputStyles/jsonStyle.test.ts` |\n| 13 | `tests/core/packager/diffsFunctionality.test.ts` |\n| 14 | `tests/core/packager/inclusionLevelSpec.test.ts` |\n| 15 | `tests/core/packager/multiRootSpec.test.ts` |\n| 16 | `tests/core/packa"
+        }
+      }
+    }
+  ],
+  "crossover": {
+    "quadratic": {
+      "pi": 0.716
+    }
+  }
+}
